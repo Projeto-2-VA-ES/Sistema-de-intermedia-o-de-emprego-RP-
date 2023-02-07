@@ -12,13 +12,15 @@ O objetivo deste projeto é fornecer uma solução eficiente e fácil de usar pa
 
 Este projeto com o intuito a avaliação para a 2ª Avaliação de aprendizagem da cadeira de Engenharia de software
 
-## :ledger: Recursos do Projeto:
-cadastrar/editar/remover/visualizar um empregador
-cadastrar/editar/remover/visualizar as vagas de empregos
-cadastrar/editar/remover/visualizar candidato à vaga
+## :mag: Recursos do Projeto:
+1. cadastrar/editar/remover/visualizar um empregador
 
-Sistema de administração para analisar e permitir a criação de vagas de empregos
+2. cadastrar/editar/remover/visualizar as vagas de empregos
 
-Capacidade de os candidatos a vagas de empregos verem os empregos disponíveis e se candidatar a tais vagas exibidas
+3. cadastrar/editar/remover/visualizar candidato à vaga
 
-empregador deve ser capaz de visualizar os candidatos que fizeram aplicação às vagas que ele criou
+4. Sistema de administração para analisar e permitir a criação de vagas de empregos
+
+5. Capacidade de os candidatos a vagas de empregos verem os empregos disponíveis e se candidatar a tais vagas exibidas
+
+6. empregador deve ser capaz de visualizar os candidatos que fizeram aplicação às vagas que ele criou
