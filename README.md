@@ -5,9 +5,20 @@
 [Luiz Fellipe](https://github.com/Luizfdarb) | [Victor Winicius](https://github.com/dev-victorw) | [Rian Wilker](https://github.com/RWilker87) | [Luan Valentino](https://github.com/LuanValentinoS)
 
 
-## :office_worker: Sobre o Projeto:
+## :ledger: Sobre o Projeto:
 Este projeto visa criar um sistema de empregos em Ruby, que possibilite a conexão entre empregadores e candidatos a emprego. Através desta plataforma, empregadores poderão publicar vagas e gerenciar candidaturas, enquanto os candidatos poderão pesquisar e se candidatar a vagas que sejam de seu interesse.
 
 O objetivo deste projeto é fornecer uma solução eficiente e fácil de usar para o mercado de trabalho, facilitando a busca por emprego e contratação
 
 Este projeto com o intuito a avaliação para a 2ª Avaliação de aprendizagem da cadeira de Engenharia de software
+
+## :ledger: Recursos do Projeto:
+cadastrar/editar/remover/visualizar um empregador
+cadastrar/editar/remover/visualizar as vagas de empregos
+cadastrar/editar/remover/visualizar candidato à vaga
+
+Sistema de administração para analisar e permitir a criação de vagas de empregos
+
+Capacidade de os candidatos a vagas de empregos verem os empregos disponíveis e se candidatar a tais vagas exibidas
+
+empregador deve ser capaz de visualizar os candidatos que fizeram aplicação às vagas que ele criou
