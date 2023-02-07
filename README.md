@@ -27,3 +27,17 @@ Este projeto com o intuito a avaliação para a 2ª Avaliação de aprendizagem 
 
 ## :hammer_and_wrench: Funcionalidades:
 Um empregador ou um candidato a emprego consegue se cadastrar colocando os seus dados pessoais, tais como o nome, CPF, Endereço, idade, data de nascimento, telefone para contato. Apos o cadastramento de um candidato, o mesmo poderá ver todas as vagas de empregos disponíveis e se candidatar e visualizar suas candidaturas já feitas. O empregador apos se cadastrar poderá anunciar uma vaga de emprego que irá se analisada e aprovada para que os candidatos se candidatem as mesmas. O empregador também poderá ver todas as candidaturas feitas para sua oferta de emprego
+
+## :video_game: Tecnologias Usadas:
+### [Ruby](https://www.ruby-lang.org/pt/)
+- Versão 3.1.1
+
+### [Rails](https://rubyonrails.org)
+- Versão 7.0.2.2
+
+### [Codacy](https://www.codacy.com/product)
+
+### [RailWay](https://railway.app)
+
+## :speech_balloon: Status do Projeto:
+Primeira Iteração
