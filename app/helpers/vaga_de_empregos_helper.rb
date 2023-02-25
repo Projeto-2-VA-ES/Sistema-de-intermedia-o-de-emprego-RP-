@@ -1,0 +1,2 @@
+module VagaDeEmpregosHelper
+end

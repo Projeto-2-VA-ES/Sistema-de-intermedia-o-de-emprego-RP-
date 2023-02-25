@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Vaga de empregos</h1>
+
+<div id="vaga_de_empregos">
+  <% @vaga_de_empregos.each do |vaga_de_emprego| %>
+    <%= render vaga_de_emprego %>
+    <p>
+      <%= link_to "Show this vaga de emprego", vaga_de_emprego %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New vaga de emprego", new_vaga_de_emprego_path %>
