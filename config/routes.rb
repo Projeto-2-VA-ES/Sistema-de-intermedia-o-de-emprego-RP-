@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :candidatos
+  resources :vaga_de_empregos
+  resources :empregadors
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
