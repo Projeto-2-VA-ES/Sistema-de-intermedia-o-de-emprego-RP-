@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20952a9b-1255-4a91-b91a-58ae4d6a3581" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +38,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager" selected="Rails.Development: Sistema-de-intermediacao-o-de-emprego">
     <configuration name="Development: Sistema-de-intermediacao-o-de-emprego" type="RailsRunConfigurationType" factoryName="Rails">
@@ -137,7 +138,7 @@
       <updated>1675826212985</updated>
       <workItem from="1675826222311" duration="795000" />
       <workItem from="1675828134241" duration="237000" />
-      <workItem from="1677366345571" duration="2164000" />
+      <workItem from="1677366345571" duration="2469000" />
     </task>
     <servers />
   </component>
