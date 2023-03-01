@@ -71,3 +71,40 @@ end
 Then("devo ver uma mensagem de erro indicando que o cadastro não foi encontrado") do
   expect(page).to have_content "Cadastro não encontrado."
 end
+
+#VALIDAR CAMPOS DO CADASTRO
+Given("que estou na página de cadastro de candidato") do
+  visit new_candidate_path
+end
+
+When("não preencho os campos obrigatórios") do
+  fill_in "Nome", with: ""
+  fill_in "Email", with: ""
+  fill_in "Telefone", with: ""
+end
+
+And("clico em {string}") do |button_text|
+  click_on button_text
+end
+
+Then("devo ver mensagens de erro indicando os campos obrigatórios") do
+  expect(page).to have_content "Nome não pode ficar em branco"
+  expect(page).to have_content "Email não pode ficar em branco"
+  expect(page).to have_content "Telefone não pode ficar em branco"
+end
+
+When("preencho o campo de email com um endereço inválido") do
+  fill_in "Email", with: "email_invalido"
+end
+
+Then("devo ver uma mensagem de erro indicando que o formato do email é inválido") do
+  expect(page).to have_content "Email não é válido"
+end
+
+When("preencho o campo de telefone com um número inválido") do
+  fill_in "Telefone", with: "1234"
+end
+
+Then("devo ver uma mensagem de erro indicando que o formato do telefone é inválido") do
+  expect(page).to have_content "Telefone não é válido"
+end
