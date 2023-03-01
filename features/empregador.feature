@@ -1,6 +1,6 @@
 Feature: Empregador
   as a empregador
-  I want to adicionar, remover, vizualizar, e editar um empregador
+  I want to adicionar, remover, visualizar, e editar um empregador
   So that mantenho o cadastro atualizado e correto
 
 

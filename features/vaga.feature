@@ -1,6 +1,6 @@
 Feature: Vaga
   as a empregador
-  I want to adicionar, remover, vizualizar, e editar uma vaga
+  I want to adicionar, remover, visualizar, e editar uma vaga
   So that mantenho as vagas atualizadas e corretas de acordo com a necessidade
 
 
