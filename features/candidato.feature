@@ -48,6 +48,25 @@ Feature: Candidato
     Given que tento acessar a página de edição de um cadastro que não existe
     Then devo ver uma mensagem de erro indicando que o cadastro não foi encontrado
 
+    #VALIDAR CAMPOS DO CADASTRO
+  Scenario: Validar campos obrigatórios do cadastro
+    Given que estou na página de cadastro de candidato
+    When não preencho os campos obrigatórios
+    And clico em "Salvar"
+    Then devo ver uma mensagem de erro indicando quais campos são obrigatórios
+
+  Scenario: Validar formato do campo de email
+    Given que estou na página de cadastro de candidato
+    When preencho o campo de email com um valor inválido
+    And clico em "Salvar"
+    Then devo ver uma mensagem de erro indicando que o email é inválido
+
+  Scenario: Validar formato do campo de telefone
+    Given que estou na página de cadastro de candidato
+    When preencho o campo de telefone com um valor inválido
+    And clico em "Salvar"
+    Then devo ver uma mensagem de erro indicando que o telefone é inválido
+
 
 
 
