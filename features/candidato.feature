@@ -36,6 +36,20 @@ Feature: Candidato
     When tento deletar um cadastro que não existe
     Then devo ver uma mensagem de erro indicando que o cadastro não foi encontrado
 
+    #EDITAR CADASTRO
+  Scenario: Editar cadastro existente com informações válidas
+    Given que estou na página de edição de um cadastro existente
+    When preencho os campos que desejo atualizar com informações válidas
+    And clico em "Salvar"
+    Then devo ver uma mensagem de confirmação
+    And o cadastro deve ser atualizado no banco de dados
+
+  Scenario: Tentar editar cadastro inexistente
+    Given que tento acessar a página de edição de um cadastro que não existe
+    Then devo ver uma mensagem de erro indicando que o cadastro não foi encontrado
+
+
+
 
 
 
