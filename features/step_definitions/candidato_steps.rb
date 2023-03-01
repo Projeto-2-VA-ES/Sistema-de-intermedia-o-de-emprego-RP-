@@ -20,3 +20,27 @@ end
 And("meu cadastro deve ser salvo no banco de dados") do
   expect(Candidate.count).to eq(1)
 end
+
+#DELETAR CADASTRO
+Given("que estou na página de listagem de candidatos") do
+  visit candidates_path
+end
+
+When("clico no botão {string} do candidato que desejo excluir") do |button_text|
+  candidate = Candidate.create(nome: "João da Silva", email: "joao.silva@example.com", telefone: "(11) 99999-9999")
+  within "#candidate_#{candidate.id}" do
+    click_on button_text
+  end
+end
+
+And("confirmo a operação") do
+  page.driver.browser.switch_to.alert.accept
+end
+
+Then("devo ver uma mensagem de confirmação") do
+  expect(page).to have_content "Cadastro excluído com sucesso."
+end
+
+And("o cadastro deve ser excluído do banco de dados") do
+  expect(Candidate.count).to eq(0)
+end
