@@ -1,7 +1,7 @@
 Feature: Empregador
   as a empregador
   I want to adicionar, remover, vizualizar, e editar um empregador
-
+  So that mantenho o cadastro atualizado e correto
 
 
   Scenario: Criar empregador com sucesso
