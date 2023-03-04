@@ -60,7 +60,7 @@ class VagaDeEmpregosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vaga_de_emprego
-      @vaga_de_emprego = VagaDeEmprego.find(params[:id])
+      @vaga_de_emprego = VagaDeEmprego.unscoped.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
