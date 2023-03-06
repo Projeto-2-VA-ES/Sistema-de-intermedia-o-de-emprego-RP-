@@ -92,15 +92,3 @@ Given("que eu tenho os seguintes empregadores na base de dados") do |table|
   end
 end
 
-Then("eu vejo a lista de empregadores com os seguintes dados:") do |table|
-  table.hashes.each do |empregador|
-    nome = empregador['Nome']
-    empresa = empregador['Nome da Empresa']
-    email = empregador['Email']
-    endereco = empregador['Endereco']
-    telefone = empregador['Telefone']
-    cnpj = empregador['CNPJ']
-
-
-  end
-end
