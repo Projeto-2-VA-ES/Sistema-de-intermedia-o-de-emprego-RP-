@@ -1,74 +1,106 @@
-Given('Que existe um empregador com o nome {string}, nomeEmpresa {string}, email {string}, endereco {string}, telefone {integer} e cnpj {string}') do   |nome, nomeEmpresa, email, endereco, telefone, cnpj|
-  visit '/empregadors/new'
-  fill_in 'empregador[nome]', :with => nome
-  fill_in 'empregador[nomeEmpresa]', :with => nomeEmpresa
-  fill_in 'empregador[email]', :with => email
-  fill_in 'empregador[endereco]', :with => endereco
-  fill_in 'empregador[telefone]', :with => telefone
-  fill_in 'empregador[cnpj]', :with => cnpj
-  click_button 'Create Empregador'
-  visit '/empregadors'
+# frozen_string_literal: true
+
+#Criar cadastro Empregador
+Given('que eu estou na página de criação de empregador') do
+  visit new_empregador_path
+end
+
+When('preencho os campos de informações do empregador') do
+  fill_in 'Nome', with: 'Maria Silva'
+  fill_in 'NomeEmpresa', with: 'Empresa XYZ '
+  fill_in 'email', with: 'maria.silva@example.com'
+  fill_in 'endereco', with: 'Rua A, 123 '
+  fill_in 'telefone', with: '(11) 5555-5555 '
+  fill_in 'CNPJ', with: '12.345.678/0001-00'
+end
+And(/^Clico em "([^"]*)"$/) do |button_text|
+  click_on button_text
 end
 
 
-Then(/^eu vejo uma mensagem que informa que o empregador foi criado com sucesso$/) do
-  pending
+Then("eu vejo uma mensagem que informa que o empregador foi criado com sucesso") do
+  expect(page).to have_content "Cadastro salvo com sucesso."
 end
 
-And(/^encho o campo "([^"]*)" com "([^"]*)"$/) do |arg1, arg2|
-  pending
+#Editar Empregador
+
+Given('que eu estou na página de edição do empregador com nome "Maria Silva"') do
+  visit empregador_path
 end
 
-Given(/^que eu estou na página de criação de empregador$/) do
-  pending
+When("preencho os campos que desejo atualizar") do
+  fill_in 'NomeEmpresa', with: 'Empresa POO '
+  fill_in 'email', with: 'maria.silva0203@example.com'
+
 end
 
-And(/^preencho o campo "([^"]*)" com "([^"]*)"$/) do |arg1, arg2|
-  pending
+Then("eu vejo uma mensagem que informa que o empregador foi atualizado com sucesso") do
+expect(page).to have_content "Editado com sucesso."
 end
 
-When(/^eu clico em "([^"]*)"$/) do |arg|
-  pending
+#Excluir Empregador
+
+Given('que eu tenho o empregador "Maria Silva" na lista de empregadores') do
+  visit empregador_path
+end
+When('eu clico no botão de excluir do empregador "Maria Silva"')do |button_text|
+  empregador = Empregador.create(nome: "Maria Silva", nomeEmpresa: "Empresa XYZ", email: "maria.silva@example.com", endereco: "Rua A, 123", telefone: "(11) 5555-5555", CNPJ: "12.345.678/0001-00")
+  within "#empregador_#{empregador.id}" do
+    click_on button_text
+  end
 end
 
-Given(/^que eu estou na página de edição do empregador com nome "([^"]*)"$/) do |arg|
-  pending
+Then("eu vejo uma mensagem que informa que o empregador foi excluído com sucesso") do
+  expect(page).to have_content "Excluído com sucesso"
 end
 
-And(/^atualizo o campo "([^"]*)" com "([^"]*)"$/) do |arg1, arg2|
-  pending
+And("o Cadastro sera excluído") do
+  expect(Empregador.count).to eq(0)
 end
 
-Then(/^eu vejo uma mensagem que informa que o empregador foi atualizado com sucesso$/) do
-  pending
+
+#Visualizar o empregador
+
+When('eu clico no link de detalhes do empregador "Maria Silva"') do
+  visit candidates_path
+
 end
 
-Given(/^que eu tenho o empregador "([^"]*)" na lista de empregadores$/) do |arg|
-  pending
+Then('eu vejo os seguintes detalhes do empregador') do |detalhes_empregador|
+    detalhes_empregador.hashes.each do |detalhe|
+    expect(page).to have_content(detalhe["Nome"])
+    expect(page).to have_content(detalhe["NomeEmpresa"])
+    expect(page).to have_content(detalhe["Email"])
+    expect(page).to have_content(detalhe["Endereco"])
+    expect(page).to have_content(detalhe["Telefone"])
+    expect(page).to have_content(detalhe["CNPJ"])
+  end
 end
 
-When(/^eu clico no botão de excluir do empregador "([^"]*)"$/) do |arg|
-  pending
+
+#Visualizar todos os empregadores
+
+Given("que eu tenho os seguintes empregadores na base de dados") do |table|
+  table.hashes.each do |empregador|
+    nome = empregador['Nome']
+    empresa = empregador['Nome da Empresa']
+    email = empregador['Email']
+    endereco = empregador['Endereco']
+    telefone = empregador['Telefone']
+    cnpj = empregador['CNPJ']
+
+  end
 end
 
-And(/^confirmo a exclusão do empregador$/) do
-  pending
-end
+Then("eu vejo a lista de empregadores com os seguintes dados:") do |table|
+  table.hashes.each do |empregador|
+    nome = empregador['Nome']
+    empresa = empregador['Nome da Empresa']
+    email = empregador['Email']
+    endereco = empregador['Endereco']
+    telefone = empregador['Telefone']
+    cnpj = empregador['CNPJ']
 
-Then(/^eu vejo uma mensagem que informa que o empregador foi excluído com sucesso$/) do
-  pending
-end
 
-When(/^eu clico no link de detalhes do empregador "([^"]*)"$/) do |arg|
-  pending
-end
-
-Then(/^eu vejo os seguintes detalhes do empregador:$/) do |table|
-  # table is a table.hashes.keys # => [:Nome, :Maria Silva]
-  pending
-end
-
-Given(/^que eu tenho os seguintes empregadores na base de dados:$/) do |table|
-  # table is a table.hashes.keys # => [:Nome, :Nome da Empresa, :Email, :Endereço, :Telefone, :CNPJ]
-  pending
+  end
 end
