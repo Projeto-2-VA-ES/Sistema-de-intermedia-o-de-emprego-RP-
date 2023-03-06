@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20952a9b-1255-4a91-b91a-58ae4d6a3581" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/empregador.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/empregador.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/features/step_definitions/empregador_steps.rb" beforeDir="false" afterPath="$PROJECT_DIR$/features/step_definitions/empregador_steps.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,6 +163,7 @@
       <workItem from="1677950663279" duration="225000" />
       <workItem from="1677951006089" duration="2517000" />
       <workItem from="1678127892062" duration="3683000" />
+      <workItem from="1678136913220" duration="521000" />
     </task>
     <servers />
   </component>
