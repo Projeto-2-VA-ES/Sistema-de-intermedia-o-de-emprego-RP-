@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20952a9b-1255-4a91-b91a-58ae4d6a3581" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentos/Postmortem.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/documentos/Postmortem.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +52,7 @@
       <recent name="C:\Users\luizf\OneDrive\Desktop\Periodo 2022.1\ES\Sistema-de-intermediacao-o-de-emprego\features\support" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Luan\OneDrive\Documentos\GitHub\Sistema-de-intermediacao-de-emprego\documentos" />
       <recent name="C:\Users\luizf\OneDrive\Desktop\Periodo 2022.1\ES\Sistema-de-intermediacao-o-de-emprego\features\support" />
     </key>
   </component>
@@ -165,6 +167,7 @@
       <workItem from="1678127892062" duration="3683000" />
       <workItem from="1678136913220" duration="521000" />
       <workItem from="1678148700775" duration="304000" />
+      <workItem from="1678207372539" duration="1418000" />
     </task>
     <servers />
   </component>
