@@ -81,14 +81,21 @@ end
 #Visualizar todos os empregadores
 
 Given("que eu tenho os seguintes empregadores na base de dados") do |table|
-  table.hashes.each do |empregador|
-    nomeempregador = empregador[(nome)]
-    empresaempreador = empregador[(nomeEmpresa)]
-    emailempregador = empregador[(email)]
-    enderecoempregador = empregador[(endereco)]
-    telefoneempregador = empregador[(telefone)]
-    cnpjempregador = empregador[(cpnj)]
+  @empregadores = table.hashes
+end
 
+Then("eu vejo a lista de empregadores com os seguintes dados:") do |table|
+  dados_esperados = table.hashes
+
+  expect(@empregadores.size).to eq(dados_esperados.size)
+
+  @empregadores.each_with_index do |empregador, index|
+    expect(empregador['Nome']).to eq(dados_esperados[index]['Nome'])
+    expect(empregador['Nome da Empresa']).to eq(dados_esperados[index]['Nome da Empresa'])
+    expect(empregador['Email']).to eq(dados_esperados[index]['Email'])
+    expect(empregador['Endereco']).to eq(dados_esperados[index]['Endereco'])
+    expect(empregador['Telefone']).to eq(dados_esperados[index]['Telefone'])
+    expect(empregador['CNPJ']).to eq(dados_esperados[index]['CNPJ'])
   end
 end
 
