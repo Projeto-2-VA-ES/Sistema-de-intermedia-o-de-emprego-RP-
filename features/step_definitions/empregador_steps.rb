@@ -12,7 +12,7 @@ Given('O empregador de nome: {string}, nomeEmpresa: {string}, email: {string}, e
 end
 
 And("estou na pagina do empregador com nome {string}") do |nome|
-  visit "/empregadors/#{nome}"
+  visit "/empregadors/#{Empregador.find_by_nome(nome).id}"
 end
 
 When('eu clico em criar Empregador') do
