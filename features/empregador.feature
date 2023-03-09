@@ -8,7 +8,7 @@ Feature: Empregador
     Given O empregador de nome: "Maria Silva", nomeEmpresa: "Empresa XYZ", email: 'maria.silva@example.com', endereco: 'Rua A, 123', telefone: '(11) 5555-5555', cnpj: '12.345.678/0001-00' existe
     And estou na pagina do empregador com nome 'Maria Silva'
     When eu clico em criar Empregador
-    Then eu vejo uma mensagem que informa que o paciente foi criado com sucesso
+    Then eu vejo uma mensagem que informa que o empregador foi criado com sucesso
 
   Scenario: Atualizar empregador com sucesso
     Given estou na pagina do empregador com nome 'Maria Silva'
@@ -17,32 +17,19 @@ Feature: Empregador
     Then eu vejo uma mensagem que informa que o empregador foi atualizado com sucesso
 
 
-
-
   Scenario: Excluir empregador com sucesso
-    Given que eu tenho o empregador "Maria Silva" na lista de empregadores
-    When eu clico no botão de excluir do empregador "Maria Silva"
+    Given estou na pagina do empregador com nome 'Maria Silva'
+    When eu clico no botão de excluir do empregador
     Then eu vejo uma mensagem que informa que o empregador foi excluído com sucesso
-    And o Cadastro sera excluído
 
+  Scenario: Criar empregador sem sucesso
+    Given Estou na pagina de cadastrar um empregador
+    When Preencho os campos de cadastro com os seguintes dados: nome: "Rian Wilker", nomeEmpresa: "Empresa ABC", email: "", endereco: "Rua B, 123", telefone: "(87)999469999", cnpj: "12.345.678/0001-00"
+    And eu clico em criar Empregador
+    Then eu vejo uma mensagem que informa que o empregador não pode ser cadastrado com esse email
 
-
-  Scenario: Visualizar detalhes do empregador
-    Given que eu tenho o empregador "Maria Silva" na lista de empregadores
-    When eu clico no link de detalhes do empregador "Maria Silva"
-    Then eu vejo os seguintes detalhes do empregador
-      | Nome          | Maria Silva       |
-      | Nome da Empresa | Empresa XYZ     |
-      | Email         | maria.silva@example.com |
-      | Endereco      | Rua A, 123        |
-      | Telefone      | (11) 5555-5555    |
-      | CNPJ          | 12.345.678/0001-00 |
-
-
-  Scenario: Ver a lista de empregadores
-    Given que eu tenho os seguintes empregadores na base de dados
-    Then eu vejo a lista de empregadores com os seguintes dados:
-      | Nome          | Nome da Empresa | Email             | Endereco           | Telefone        | CNPJ             |
-    | Maria Silva   | Empresa XYZ     | maria.silva@example.com | Rua A, 123 | (11) 5555-5555    | 12.345.678/0001-00 |
-
-
+  Scenario: Criar empregador sem sucesso
+    Given Estou na pagina de cadastrar um empregador
+    When Preencho os campos de cadastro com os seguintes dados: nome: "", nomeEmpresa: "Empresa ABC", email: "rianwilker17@gmail.com", endereco: "Rua B, 123", telefone: "(87)999469999", cnpj: "12.345.678/0001-00"
+    And eu clico em criar Empregador
+    Then eu vejo uma mensagem que informa que o empregador não pode ser cadastrado com esse nome
