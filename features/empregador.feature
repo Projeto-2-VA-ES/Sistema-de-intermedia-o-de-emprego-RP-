@@ -5,16 +5,17 @@ Feature: Empregador
 
 
   Scenario: Criar empregador com sucesso
-    Given que eu estou na página de criação de empregador
-    When preencho os campos de informações do empregador
-    And Clico em "Cadastrar Empregador"
-    Then eu vejo uma mensagem que informa que o empregador foi criado com sucesso
+    Given O empregador de nome: "Maria Silva", nomeEmpresa: "Empresa XYZ", email: 'maria.silva@example.com', endereco: 'Rua A, 123', telefone: '(11) 5555-5555', cnpj: '12.345.678/0001-00' existe
+    And estou na pagina do empregador com nome 'Maria Silva'
+    When eu clico em criar Empregador
+    Then eu vejo uma mensagem que informa que o paciente foi criado com sucesso
 
   Scenario: Atualizar empregador com sucesso
-    Given que eu estou na página de edição do empregador com nome "Maria Silva"
-    When preencho os campos que desejo atualizar
+    Given estou na pagina do empregador com nome 'Maria Silva'
+    When preencho os campos que desejo atualizar: email: 'maria.silva023@example.com', nomeEmpresa: 'Empresa ABC'
     And  Clico em "Editar Empregador"
     Then eu vejo uma mensagem que informa que o empregador foi atualizado com sucesso
+
 
 
 
