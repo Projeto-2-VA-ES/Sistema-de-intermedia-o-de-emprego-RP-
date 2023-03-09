@@ -14,7 +14,7 @@ class EmpregadorsTest < ApplicationSystemTestCase
     visit empregadors_url
     click_on "New empregador"
 
-    fill_in "Cpnj", with: @empregador.cpnj
+    fill_in "cnpj", with: @empregador.cnpj
     fill_in "Email", with: @empregador.email
     fill_in "Endereco", with: @empregador.endereco
     fill_in "Nome", with: @empregador.nome
@@ -30,7 +30,7 @@ class EmpregadorsTest < ApplicationSystemTestCase
     visit empregador_url(@empregador)
     click_on "Edit this empregador", match: :first
 
-    fill_in "Cpnj", with: @empregador.cpnj
+    fill_in "cnpj", with: @empregador.cnpj
     fill_in "Email", with: @empregador.email
     fill_in "Endereco", with: @empregador.endereco
     fill_in "Nome", with: @empregador.nome

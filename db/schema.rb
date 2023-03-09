@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_25_234349) do
     t.string "email"
     t.string "endereco"
     t.integer "telefone"
-    t.string "cpnj"
+    t.string "cnpj"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

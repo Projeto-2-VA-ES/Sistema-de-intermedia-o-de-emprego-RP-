@@ -1,18 +1,18 @@
 #Criar empregador
 
 Given('O empregador de nome: {string}, nomeEmpresa: {string}, email: {string}, endereco: {string}, telefone: {string}, cnpj: {string} existe') do |nome , nomeEmpresa, email, endereco, telefone, cnpj|
-  visit '/empregador/new'
+  visit '/empregadors/new'
   fill_in 'empregador[nome]', :with => nome
   fill_in 'empregador[nomeEmpresa]', :with => nomeEmpresa
   fill_in 'empregador[email]', :with => email
   fill_in 'empregador[endereco]', :with => endereco
   fill_in 'empregador[telefone]', :with => telefone
   fill_in 'empregador[telefone]', :with => telefone
-  fill_in 'empregador[cpnj]', :with => cnpj
+  fill_in 'empregador[cnpj]', :with => cnpj
 end
 
 And("estou na pagina do empregador com nome {string}") do |nome|
-  visit "/empregadors/#{Empregador.find_by_nome(nome).id}"
+  visit "/empregadors/#{nome}"
 end
 
 When('eu clico em criar Empregador') do
@@ -51,7 +51,7 @@ end
 
 #Cadastrar sem sucesso 1
 Given('Estou na pagina de cadastrar um empregador')do
-  visit '/empregador/new'
+  visit '/empregadors/new'
 end
 
 When('Preencho os campos de cadastro com os seguintes dados: nome: {string}, nomeEmpresa: {string}, email: {string}, endereco: {string}, telefone: {string}, cnpj: {string}')do |nome , nomeEmpresa, email, endereco, telefone, cnpj|
@@ -61,7 +61,7 @@ When('Preencho os campos de cadastro com os seguintes dados: nome: {string}, nom
   fill_in 'empregador[endereco]', :with => endereco
   fill_in 'empregador[telefone]', :with => telefone
   fill_in 'empregador[telefone]', :with => telefone
-  fill_in 'empregador[cpnj]', :with => cnpj
+  fill_in 'empregador[cnpj]', :with => cnpj
 end
 
 
@@ -69,7 +69,7 @@ Then('eu vejo uma mensagem que informa que o empregador não pode ser cadastrado
   page.has_content?('Este email não pode ser cadastrado')
 end
 
-#Cadastrar sem sucesso
+#Cadastrar sem sucesso 2
 
 Then('eu vejo uma mensagem que informa que o empregador não pode ser cadastrado com esse nome')do
   page.has_content?('Este nome não pode ser cadastrado')

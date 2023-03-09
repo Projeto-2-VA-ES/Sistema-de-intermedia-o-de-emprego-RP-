@@ -17,7 +17,7 @@ class EmpregadorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create empregador" do
     assert_difference("Empregador.count") do
-      post empregadors_url, params: { empregador: { cpnj: @empregador.cpnj, email: @empregador.email, endereco: @empregador.endereco, nome: @empregador.nome, nomeEmpresa: @empregador.nomeEmpresa, telefone: @empregador.telefone } }
+      post empregadors_url, params: { empregador: { cnpj: @empregador.cnpj, email: @empregador.email, endereco: @empregador.endereco, nome: @empregador.nome, nomeEmpresa: @empregador.nomeEmpresa, telefone: @empregador.telefone } }
     end
 
     assert_redirected_to empregador_url(Empregador.last)
@@ -34,7 +34,7 @@ class EmpregadorsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update empregador" do
-    patch empregador_url(@empregador), params: { empregador: { cpnj: @empregador.cpnj, email: @empregador.email, endereco: @empregador.endereco, nome: @empregador.nome, nomeEmpresa: @empregador.nomeEmpresa, telefone: @empregador.telefone } }
+    patch empregador_url(@empregador), params: { empregador: { cnpj: @empregador.cnpj, email: @empregador.email, endereco: @empregador.endereco, nome: @empregador.nome, nomeEmpresa: @empregador.nomeEmpresa, telefone: @empregador.telefone } }
     assert_redirected_to empregador_url(@empregador)
   end
 
