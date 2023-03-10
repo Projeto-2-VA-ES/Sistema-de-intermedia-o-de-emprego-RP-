@@ -13,7 +13,7 @@ Given('O empregador de nome: {string}, nomeEmpresa: {string}, email: {string}, e
   fill_in 'empregador[cnpj]', :with => cnpj
 end
 
-And("estou na pagina do empregador com nome {string}") do |nome|
+And("estou na pagina do empregador criado com nome {string}") do |nome|
   empregador = Empregador.find_by(nome: nome)
   visit "/empregadors/#{empregador.id}"
 end
@@ -29,6 +29,11 @@ Then('eu vejo uma mensagem que informa que o empregador foi criado com sucesso')
 end
 
 #Editar empregador
+
+Given("estou na pagina do empregador com nome {string}") do |nome|
+  empregador = Empregador.find_by(nome: nome)
+  visit "/empregadors/#{empregador.id}"
+end
 
 When('preencho os campos que desejo atualizar: email: {string}, nomeEmpresa: {string}')do |email, nomeEmpresa|
   fill_in 'empregador[nomeEmpresa]', :with => nomeEmpresa
