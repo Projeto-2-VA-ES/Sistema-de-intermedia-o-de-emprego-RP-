@@ -19,17 +19,17 @@ Feature: Empregador
 
   Scenario: Excluir empregador com sucesso
     Given estou na pagina do empregador com nome 'Maria Silva'
-    When eu clico no botão de excluir do empregador
-    Then eu vejo uma mensagem que informa que o empregador foi excluído com sucesso
+    When eu clico no botao de excluir do empregador
+    Then eu vejo uma mensagem que informa que o empregador foi excluido com sucesso
 
   Scenario: Criar empregador sem sucesso
     Given Estou na pagina de cadastrar um empregador
     When Preencho os campos de cadastro com os seguintes dados: nome: "Rian Wilker", nomeEmpresa: "Empresa ABC", email: "", endereco: "Rua B, 123", telefone: "(87)999469999", cnpj: "12.345.678/0001-00"
     And eu clico em criar Empregador
-    Then eu vejo uma mensagem que informa que o empregador não pode ser cadastrado com esse email
+    Then eu vejo uma mensagem que informa que o empregador nao pode ser cadastrado com esse email
 
   Scenario: Criar empregador sem sucesso
     Given Estou na pagina de cadastrar um empregador
     When Preencho os campos de cadastro com os seguintes dados: nome: "", nomeEmpresa: "Empresa ABC", email: "rianwilker17@gmail.com", endereco: "Rua B, 123", telefone: "(87)999469999", cnpj: "12.345.678/0001-00"
     And eu clico em criar Empregador
-    Then eu vejo uma mensagem que informa que o empregador não pode ser cadastrado com esse nome
+    Then eu vejo uma mensagem que informa que o empregador nao pode ser cadastrado com esse nome
