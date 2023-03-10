@@ -1,9 +1,6 @@
 #Criar empregador
 #
-def get_empregador_id_by_nome(nome)
-  empregador = Empregador.find_by(nome: nome)
-  empregador.id
-end
+
 
 Given('O empregador de nome: {string}, nomeEmpresa: {string}, email: {string}, endereco: {string}, telefone: {string}, cnpj: {string} existe') do |nome , nomeEmpresa, email, endereco, telefone, cnpj|
   visit '/empregadors/new'
@@ -17,8 +14,8 @@ Given('O empregador de nome: {string}, nomeEmpresa: {string}, email: {string}, e
 end
 
 And("estou na pagina do empregador com nome {string}") do |nome|
-  id = get_empregador_id_by_nome(nome)
-  visit "/empregadors/#{id}"
+  empregador = Empregador.find_by(nome: nome)
+  visit "/empregadors/#{empregador.id}"
 end
 
 When('eu clico em criar Empregador' ) do
