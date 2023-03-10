@@ -65,6 +65,6 @@ class EmpregadorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def empregador_params
-      params.require(:empregador).permit(:nome, :nomeEmpresa, :email, :endereco, :telefone, :cpnj)
+      params.require(:empregador).permit(:nome, :nomeEmpresa, :email, :endereco, :telefone, :cnpj)
     end
 end

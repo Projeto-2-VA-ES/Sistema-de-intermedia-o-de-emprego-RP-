@@ -6,7 +6,7 @@ class EmpregadorTest < ActiveSupport::TestCase
     empregador = Empregador.new
     empregador.nome = " Rian Wilker "
     empregador.nomeEmpresa = "12345678901"
-    empregador.cpnj = "12.345.678/0001-00"
+    empregador.cnpj = "12.345.678/0001-00"
     empregador.telefone = "87-99258-9444"
     empregador.endereco = "Rua Almir pacherco"
 
@@ -18,7 +18,7 @@ class EmpregadorTest < ActiveSupport::TestCase
     empregador = Empregador.new
     empregador.nome = "Rian Wilker"
     empregador.nomeEmpresa = "Frios LDTA"
-    empregador.cpnj = "12.345.678/0001-00"
+    empregador.cnpj = "12.345.678/0001-00"
     empregador.telefone = "87-99258-9444"
     empregador.endereco = "Rua Almir Pacheco"
 
@@ -30,7 +30,7 @@ class EmpregadorTest < ActiveSupport::TestCase
     empregador = Empregador.new
     empregador.nome = "Rian Wilker"
     empregador.nomeEmpresa = "Frios LDTA"
-    empregador.cpnj = "12.345.678/0001-00"
+    empregador.cnpj = "12.345.678/0001-00"
     empregador.telefone = "87-99258-9444"
     empregador.endereco = ""
 
