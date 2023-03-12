@@ -14,7 +14,7 @@ Given('O empregador de nome: {string}, nomeEmpresa: {string}, email: {string}, e
 end
 
 When('eu clico em criar Empregador' ) do
-  click_button 'Create Empregador'
+  click_button 'Criar empregador'
   visit '/empregadors'
 
 end
@@ -26,11 +26,11 @@ end
 #Editar empregador
 
 Given("estou na pagina de empregadores") do
-  visit '/empregadors/'
+  visit '/empregadors'
 end
 
 And('clico em mostar o empregador desejado')do
-  click_button 'Show this empreador'
+  click_button 'Show empregador'
 end
 
 And('clico para editar este empregador')do
