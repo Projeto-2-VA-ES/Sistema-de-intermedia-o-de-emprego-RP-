@@ -15,7 +15,7 @@ Feature: Empregador
     And clico em mostar o empregador desejado
     And clico para editar este empregador
     When preencho os campos que desejo atualizar: email: 'maria.silva023@example.com', nomeEmpresa: 'Empresa ABC'
-    And  Clico em "Editar Empregador"
+    And Clico para salvar as atualizacoes
     Then eu vejo uma mensagem que informa que o empregador foi atualizado com sucesso
 
 
