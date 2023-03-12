@@ -30,11 +30,11 @@ Given("estou na pagina de empregadores") do
 end
 
 And('clico em mostar o empregador desejado')do
-  click_button 'Show empregador'
-  visit '/empregadors/'
+  click_button 'Show this empregador'
 end
 
 And('clico para editar este empregador')do
+  visit '/empregadors/'
   click_button 'Edit this empregador'
 end
 
@@ -43,7 +43,7 @@ When('preencho os campos que desejo atualizar: email: {string}, nomeEmpresa: {st
   fill_in 'empregador[email]', :with => email
 end
 And('Clico em "Editar Empregador"')do
-  click_button 'Edit Empregador'
+  click_button 'Edit this empregador'
 end
 Then('eu vejo uma mensagem que informa que o empregador foi atualizado com sucesso')do
   page.has_content?('Empregador was successfully edited.')
@@ -76,11 +76,6 @@ When('Preencho os campos de cadastro com os seguintes dados: nome: {string}, nom
   fill_in 'empregador[telefone]', :with => telefone
   fill_in 'empregador[cnpj]', :with => cnpj
 end
-
-And('eu clico em criar Empregador')do
-  click_button 'Create Empregador'
-end
-
 
 Then('eu vejo uma mensagem que informa que o empregador não pode ser cadastrado com esse email')do
   page.has_content?('Este email não pode ser cadastrado')
