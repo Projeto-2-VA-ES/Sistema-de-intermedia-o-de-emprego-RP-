@@ -30,9 +30,16 @@ end
 
 #Editar empregador
 
-Given("estou na pagina do empregador com nome {string}") do |nome|
+Given("estou na pagina de empregadores") do
   empregador = Empregador.find_by(nome: nome)
-  visit "/empregadors/#{empregador.id}"
+  visit '/empregadors'
+end
+And('clico em mostar o empregador desejado')do
+  click_button 'Show this empreador'
+end
+
+And('clico para editar este empregador')do
+  click_button 'Edit this empregador'
 end
 
 When('preencho os campos que desejo atualizar: email: {string}, nomeEmpresa: {string}')do |email, nomeEmpresa|
@@ -61,6 +68,8 @@ end
 Given('Estou na pagina de cadastrar um empregador')do
   visit '/empregadors/new'
 end
+
+
 
 When('Preencho os campos de cadastro com os seguintes dados: nome: {string}, nomeEmpresa: {string}, email: {string}, endereco: {string}, telefone: {string}, cnpj: {string}')do |nome , nomeEmpresa, email, endereco, telefone, cnpj|
   fill_in 'empregador[nome]', :with => nome

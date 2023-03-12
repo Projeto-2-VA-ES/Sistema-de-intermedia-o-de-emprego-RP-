@@ -11,14 +11,17 @@ Feature: Empregador
     Then eu vejo uma mensagem que informa que o empregador foi criado com sucesso
 
   Scenario: Atualizar empregador com sucesso
-    Given estou na pagina do empregador com nome 'Maria Silva'
+    Given estou na pagina de empregadores
+    And clico em mostar o empregador desejado
+    And clico para editar este empregador
     When preencho os campos que desejo atualizar: email: 'maria.silva023@example.com', nomeEmpresa: 'Empresa ABC'
     And  Clico em "Editar Empregador"
     Then eu vejo uma mensagem que informa que o empregador foi atualizado com sucesso
 
 
   Scenario: Excluir empregador com sucesso
-    Given estou na pagina do empregador com nome 'Maria Silva'
+    Given estou na pagina de empregadores
+    And clico em mostar o empregador desejado
     When eu clico no botão de excluir do empregador
     Then eu vejo uma mensagem que informa que o empregador foi excluído com sucesso
 
