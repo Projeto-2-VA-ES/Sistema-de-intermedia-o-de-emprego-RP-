@@ -13,11 +13,6 @@ Given('O empregador de nome: {string}, nomeEmpresa: {string}, email: {string}, e
   fill_in 'empregador[cnpj]', :with => cnpj
 end
 
-And("estou na pagina do empregador criado com nome {string}") do |nome|
-  empregador = Empregador.find_by(nome: nome)
-  visit "/empregadors/#{empregador.id}"
-end
-
 When('eu clico em criar Empregador' ) do
   click_button 'Create Empregador'
   visit '/empregadors'
@@ -31,9 +26,9 @@ end
 #Editar empregador
 
 Given("estou na pagina de empregadores") do
-  empregador = Empregador.find_by(nome: nome)
-  visit '/empregadors'
+  visit '/empregadors/'
 end
+
 And('clico em mostar o empregador desejado')do
   click_button 'Show this empreador'
 end

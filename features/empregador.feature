@@ -6,7 +6,7 @@ Feature: Empregador
 
   Scenario: Criar empregador com sucesso
     Given O empregador de nome: "Maria Silva", nomeEmpresa: "Empresa XYZ", email: 'maria.silva@example.com', endereco: 'Rua A, 123', telefone: '(11) 5555-5555', cnpj: '12.345.678/0001-00' existe
-    And estou na pagina do empregador criado com nome 'Maria Silva'
+    And  estou na pagina de empregadores
     When eu clico em criar Empregador
     Then eu vejo uma mensagem que informa que o empregador foi criado com sucesso
 
