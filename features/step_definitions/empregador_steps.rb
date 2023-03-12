@@ -14,7 +14,7 @@ Given('O empregador de nome: {string}, nomeEmpresa: {string}, email: {string}, e
 end
 
 When('eu clico em criar Empregador' ) do
-  click_button 'Criar empregador'
+  click_button 'Criar Empregador'
   visit '/empregadors'
 
 end
@@ -31,6 +31,7 @@ end
 
 And('clico em mostar o empregador desejado')do
   click_button 'Show empregador'
+  visit '/empregadors/'
 end
 
 And('clico para editar este empregador')do
@@ -74,6 +75,10 @@ When('Preencho os campos de cadastro com os seguintes dados: nome: {string}, nom
   fill_in 'empregador[telefone]', :with => telefone
   fill_in 'empregador[telefone]', :with => telefone
   fill_in 'empregador[cnpj]', :with => cnpj
+end
+
+And('eu clico em criar Empregador')do
+  click_button 'Create Empregador'
 end
 
 
