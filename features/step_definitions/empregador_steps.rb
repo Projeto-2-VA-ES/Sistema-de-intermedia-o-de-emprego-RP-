@@ -6,8 +6,11 @@ Given('O empregador de nome: {string}, nomeEmpresa: {string}, email: {string}, e
   Empregador.create!(nome: nome, nomeEmpresa: nomeEmpresa, email: email, endereco: endereco, telefone: telefone, cnpj: cnpj)
 end
 
-When('eu clico em criar Empregador') do
+And('visito a pagina de criacao de empregador')do
   visit '/empregadors/new'
+end
+When('eu clico em criar Empregador') do
+
   click_button 'Create Empregador'
   visit '/empregadors'
 end
@@ -18,7 +21,7 @@ end
 
 #Editar empregador
 
-Given("estou na pagina de empregadores") do
+And("estou na pagina de empregadores") do
   visit(empregadors_path)
 end
 
