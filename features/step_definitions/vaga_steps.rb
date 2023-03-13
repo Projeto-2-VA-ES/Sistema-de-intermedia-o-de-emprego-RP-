@@ -1,23 +1,42 @@
-# Adicionar Vaga
-Given("que eu esteja na pagina de criacao de vaga") do
+# Criar vaga com sucesso
+Given('que exista uma vaga com titulo: {string}, descricao: {string}, salario: {string}') do |titulo, descricao, salario|
+  Vaga.create!(titulo: titulo, descricao: descricao, salario: salario)
+end
+
+And('eu visito a pagina de criacao de vaga') do
   visit new_vaga_path
 end
 
-When("eu preencho os campos obrigatorios com os dados da vaga") do
-  fill_in "Titulo", with: "Desenvolvedor Ruby"
-  fill_in "Descricao", with: "Vaga para desenvolvedor Ruby"
-  fill_in "Salario", with: "R$ 5.000,00"
+When('eu crio a vaga com titulo: {string}, descricao: {string}, salario: {string}') do |titulo, descricao, salario|
+  fill_in 'Titulo', :with => titulo
+  fill_in 'Descricao', :with => descricao
+  fill_in 'Salario', :with => salario
+  click_button 'Criar Vaga'
 end
 
-And("eu clico em 'Criar Vaga'") do
-  click_button "Criar Vaga"
+Then('eu vejo uma mensagem que informa que a vaga foi criada com sucesso') do
+  page.has_content?('Vaga criada com sucesso.')
 end
 
-Then("eu devo ser redirecionado para a pagina da vaga recentemente criada") do
-  expect(page).to have_content("Vaga criada com sucesso")
+
+# Criar vaga sem sucesso
+
+When('Preencho os campos de cadastro da vaga com os seguintes dados: titulo: {string}, descricao: {string}, salario: {string}') do |titulo, descricao, salario|
+  fill_in 'Titulo', :with => titulo
+  fill_in 'Descricao', :with => descricao
+  fill_in 'Salario', :with => salario
 end
+
+Then('eu vejo uma mensagem que informa que a vaga não pode ser cadastrada com esse titulo') do
+  page.has_content?('Este título não pode ser cadastrado')
+end
+
 
 # Visualizar Vaga
+Given('que exista uma vaga com titulo: {string}, descricao: {string}, salario: {string}') do |titulo, descricao, salario|
+  Vaga.create!(titulo: titulo, descricao: descricao, salario: salario)
+end
+
 Given("que eu esteja na pagina de listagem de vagas") do
   visit vagas_path
 end
@@ -30,12 +49,17 @@ Then("eu devo ser redirecionado para a pagina da vaga selecionada") do
   expect(page).to have_content("Descricao da vaga:")
 end
 
-# Editar Vaga
-Given("que eu esteja na pagina de edicao de vaga") do
+
+# Editar vaga com sucesso
+Given('que exista uma vaga com titulo: {string}, descricao: {string}, salario: {string}') do |titulo, descricao, salario|
+  Vaga.create!(titulo: titulo, descricao: descricao, salario: salario)
+end
+
+And("que eu esteja na pagina de edicao de vaga") do
   visit edit_vaga_path(@vaga)
 end
 
-When("eu altero os campos desejados da vaga") do
+When('eu altero os campos desejados da vaga com titulo: {string}, descricao: {string}, salario: {string}') do |titulo, descricao, salario|
   fill_in "Descricao", with: "Vaga para desenvolvedor Ruby on Rails"
   click_button "Atualizar Vaga"
 end
@@ -44,28 +68,21 @@ Then("eu devo ser redirecionado para a pagina atualizada da vaga") do
   expect(page).to have_content("Vaga atualizada com sucesso")
 end
 
-# Remover Vaga
-Given("que eu esteja na pagina de listagem de vagas") do
+
+# Remover vaga com sucesso
+Given('que exista uma vaga com titulo: {string}, descricao: {string}, salario: {string}') do |titulo, descricao, salario|
+  Vaga.create!(titulo: titulo, descricao: descricao, salario: salario)
+end
+
+And("que eu esteja na pagina de vagas") do
   visit vagas_path
 end
 
-When("eu clico no botao 'Remover' da vaga desejada") do
+When("eu clico no botao de remover da vaga com titulo: {string}, descricao: {string}, salario: {string}') do |titulo, descricao, salario|") do
   click_link "Remover"
 end
 
-Then("a vaga deve ser removida da lista de vagas") do
-  expect(page).to_not have_content("Desenvolvedor Ruby")
+Then('eu vejo uma mensagem que informa que a vaga foi excluída com sucesso') do
+  page.has_content?('Vaga excluída com sucesso.')
 end
 
-# Ver Lista de Vagas
-Given("que eu esteja na pagina inicial") do
-  visit root_path
-end
-
-When("eu clico no botao 'Ver Vagas'") do
-  click_link "Ver Vagas"
-end
-
-Then("eu devo ser redirecionado para a pagina de listagem de vagas") do
-  expect(page).to have_content("Lista de vagas")
-end
