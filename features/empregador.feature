@@ -11,7 +11,7 @@ Feature: Empregador
     Then eu vejo uma mensagem que informa que o empregador foi criado com sucesso
 
   Scenario: Atualizar empregador com sucesso
-    Given O empregador de nome: "Maria Silva", nomeEmpresa: "Empresa XYZ", email: 'maria.silva@example.com', endereco: 'Rua A, 123', telefone: '1155555555', cnpj: '12.345.678/0001-00' existe
+    Given O empregador de nome: "Maria Silva", nomeEmpresa: "Empresa XYZ", email: 'maria.silva@example.com', endereco: 'Rua A, 123', telefone: '1155555555', cnpj: '12.345.678/0001-01' existe
     And estou na pagina de empregadores
     And visito o empregador desejado
     And clico para editar este empregador
@@ -21,7 +21,7 @@ Feature: Empregador
 
 
   Scenario: Excluir empregador com sucesso
-    Given O empregador de nome: "Maria Silva", nomeEmpresa: "Empresa XYZ", email: 'maria.silva@example.com', endereco: 'Rua A, 123', telefone: '1155555555', cnpj: '12.345.678/0001-00' existe
+    Given O empregador de nome: "Maria Silva", nomeEmpresa: "Empresa XYZ", email: 'maria.silva@example.com', endereco: 'Rua A, 123', telefone: '1155555555', cnpj: '12.345.678/0001-02' existe
     And estou na pagina de empregadores
     And visito o empregador desejado
     When eu clico no botão de excluir do empregador
