@@ -21,7 +21,7 @@ Feature: Vaga
   Scenario: Visualizar vaga com sucesso
     Given a vaga de titulo: "Desenvolvedor Ruby", descricao: "Vaga para desenvolvedor Ruby", salario: "R$ 5.000,00" existe
     And que eu esteja na pagina de listagem de vagas
-    When eu clico no botao 'Visualizar' da vaga desejada
+    When eu clico no botao 'Visualizar' da vaga com titulo: "Densenvolvedor Ruby", descricao: "Vaga para desenvolvedor Ruby", salario: "R$ 5.000,00"
     Then eu devo ser redirecionado para a pagina da vaga selecionada e vejo a mensagem "Descricao da vaga:"
 
   # Editar vaga
@@ -35,8 +35,7 @@ Feature: Vaga
   Scenario: Remover vaga com sucesso
     Given a vaga de titulo: "Desenvolvedor Ruby", descricao: "Vaga para desenvolvedor Ruby", salario: "R$ 5.000,00" existe
     And que eu esteja na pagina de listagem de vagas
-    And visito a vaga com titulo: "Densenvolvedor Ruby", descricao: "Vaga para desenvolvedor Ruby", salario: "R$ 5.000,00"
-    When eu clico no botao 'Remover' da vaga desejada
-    Then a vaga deve ser removida da lista de vagas e eu nao vejo mais a vaga na lista
+    When eu clico no botão 'Remover' da vaga com titulo: "Densenvolvedor Ruby", descricao: "Vaga para desenvolvedor Ruby", salario: "R$ 5.000,00"
+    Then eu devo ser redirecionado para a pagina atualizada da vaga e vejo uma mensagem dizendo "Vaga removida com sucesso!"
 
 
