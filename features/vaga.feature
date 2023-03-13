@@ -1,51 +1,30 @@
 Feature: Vaga
-  as a empregador
+  As a empregador
   I want to adicionar, remover, visualizar, e editar uma vaga
-  So that mantenho as vagas atualizadas e corretas de acordo com a necessidade
-
+  So that mantenho o cadastro atualizado e correto
 
   Scenario: Criar vaga com sucesso
-    Given que estou logado como um usuario com permissao para gerenciar vagas
-    When acesso a pagina de gerenciamento de vagas
-    And clico no botao para adicionar uma nova vaga
-    Then sou direcionado para a pagina de criacao de vaga
-    And preencho todos os campos obrigatorios
-    And clico em salvar
-    Then a nova vaga e criada com sucesso
-    And sou redirecionado de volta para a pagina de gerenciamento de vagas
-    And a nova vaga aparece na lista de vagas
+    Given que eu esteja na pagina de criacao de vaga
+    When eu preencho os campos obrigatorios com os dados da vaga: Titulo: "Desenvolvedor Ruby", Descricao: "Vaga para desenvolvedor Ruby", Salario: "R$ 5.000,00"
+    And eu clico em 'Criar Vaga'
+    Then eu devo ser redirecionado para a pagina da vaga recem-criada e vejo a mensagem "Vaga criada com sucesso"
 
-  Scenario: Atualizar vaga com sucesso
-    Given que estou logado como um usuario com permissao para gerenciar vagas
-    When acesso a pagina de gerenciamento de vagas
-    And seleciono uma vaga da lista de vagas
-    And clico no botao para editar a vaga
-    Then sou redirecionado para a pagina de edição de vaga
-    And altero as informacoes da vaga
-    And clico em salvar
-    Then as informacoes da vaga sao atualizadas com sucesso
-    And sou redirecionado de volta para a pagina de gerenciamento de vagas
-    And as informacoes atualizadas da vaga aparecem na lista de vagas
+  Scenario: Visualizar vaga com sucesso
+    Given que eu esteja na pagina de listagem de vagas
+    When eu clico no botao 'Visualizar' da vaga desejada
+    Then eu devo ser redirecionado para a pagina da vaga selecionada e vejo a mensagem "Descricao da vaga:"
 
+  Scenario: Editar vaga com sucesso
+    Given que eu esteja na pagina de edicao de vaga
+    When eu altero os campos desejados da vaga, preenchendo a Descricao com "Vaga para desenvolvedor Ruby on Rails" e clico em 'Atualizar Vaga'
+    Then eu devo ser redirecionado para a pagina atualizada da vaga e vejo a mensagem "Vaga atualizada com sucesso"
 
-  Scenario: Excluir vaga com sucesso
-    Given que estou logado como um usuario com permissao para gerenciar vagas
-    When acesso a pagina de gerenciamento de vagas
-    And seleciono uma vaga da lista de vagas
-    And clico no botao para remover a vaga
-    Then a vaga foi removida com sucesso
-    And sou redirecionado de volta para a pagina de gerenciamento de vagas
-    And a nova vaga aparece na lista de vagas
+  Scenario: Remover vaga com sucesso
+    Given que eu esteja na pagina de listagem de vagas
+    When eu clico no botao 'Remover' da vaga desejada
+    Then a vaga deve ser removida da lista de vagas e eu nao vejo mais a vaga na lista
 
-
-  Scenario: Visualizar detalhes da vaga
-    Given que estou logado como um usuario com permissao para gerenciar vagas
-    When acesso a pagina de gerenciamento de vagas
-    And seleciono uma vaga da lista de vagas
-    Then visualizo todas as informacoes da vaga
-
-
-  Scenario: Ver a lista de vagas
-    Given que estou logado como um usuario com permissao para gerenciar vagas
-    When acesso a pagina de gerenciamento de vagas
-    Then visualizo a lista completa de vagas cadastradas
+  Scenario: Ver lista de vagas
+    Given que eu esteja na pagina inicial
+    When eu clico no botao 'Ver Vagas'
+    Then eu devo ser redirecionado para a pagina de listagem de vagas e vejo a mensagem "Lista de vagas"
