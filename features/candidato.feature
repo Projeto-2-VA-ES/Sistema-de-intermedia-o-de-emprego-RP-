@@ -25,8 +25,8 @@ Feature: Candidato
     #DELETAR CADASTRO
   Scenario: Deletar cadastro existente
     Given que estou na pagina de listagem de candidatos
-    When clico no botao Deletar Candidato
-    And confirmo a operacao
+    When seleciono um cadastro existente
+    And clico no botao Deletar Candidato
     Then vejo uma mensagem de confirmacao
 
     #EDITAR CADASTRO
