@@ -1,8 +1,6 @@
 #Criar empregador
 
-require 'capybara'
-require 'capybara/dsl'
-require 'capybara/rspec/matchers'
+
 
 Given('O empregador de nome: {string}, nomeEmpresa: {string}, email: {string}, endereco: {string}, telefone: {string}, cnpj: {string} existe') do |nome, nomeEmpresa, email, endereco, telefone, cnpj|
   Empregador.create!(nome: nome, nomeEmpresa: nomeEmpresa, email: email, endereco: endereco, telefone: telefone, cnpj: cnpj)

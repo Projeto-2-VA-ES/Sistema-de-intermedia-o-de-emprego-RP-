@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20952a9b-1255-4a91-b91a-58ae4d6a3581" name="Changes" comment="" />
+    <list default="true" id="20952a9b-1255-4a91-b91a-58ae4d6a3581" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Sistema-de-intermediacao-o-de-emprego.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Sistema-de-intermediacao-o-de-emprego.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/step_definitions/empregador_steps.rb" beforeDir="false" afterPath="$PROJECT_DIR$/features/step_definitions/empregador_steps.rb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -210,6 +214,7 @@
       <workItem from="1678401737267" duration="3845000" />
       <workItem from="1678472416239" duration="649000" />
       <workItem from="1678659009477" duration="6141000" />
+      <workItem from="1678723765913" duration="87000" />
     </task>
     <servers />
   </component>
