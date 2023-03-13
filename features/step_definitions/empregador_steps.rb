@@ -31,7 +31,7 @@ And('visito o empregador desejado') do
 end
 
 And('clico para editar este empregador') do
-  click_link_or_button("Editar")
+  click_link_or_button("Edit this empregador")
 end
 
 When('preencho os campos que desejo atualizar: email: {string}, nomeEmpresa: {string}') do |email, nomeEmpresa|
