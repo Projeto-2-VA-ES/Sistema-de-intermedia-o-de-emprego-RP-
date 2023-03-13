@@ -2,11 +2,14 @@
 
 <h1>Empregadors</h1>
 
+
+
+
 <div id="empregadors">
   <% @empregadors.each do |empregador| %>
     <%= render empregador %>
     <p>
-      <%= link_to "Show this empregador", empregador %>
+      <%= link_to "Show this empregadors", empregador %>
     </p>
   <% end %>
 </div>
