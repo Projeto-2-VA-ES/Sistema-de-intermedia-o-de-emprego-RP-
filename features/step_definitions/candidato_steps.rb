@@ -51,12 +51,12 @@ Given(/^que estou na pagina de listagem de candidatos$/) do
   visit '/candidatos'
 end
 
-When(/^clico no botao Deletar Candidato$/) do
-  click_button 'Deletar Candidato'
+When(/^seleciono um cadastro existente$/) do
+  click_link_or_button("Show this candidato")
 end
 
-And(/^confirmo a operacao$/) do
-  page.driver.browser.switch_to.alert.accept
+And(/^clico no botao Deletar Candidato$/) do
+  click_link_or_button("Destroy this candidato")
 end
 
 Then(/^vejo uma mensagem de confirmacao$/) do
@@ -74,3 +74,4 @@ end
 Then(/^devo ver uma mensagem de confirmacao da atualizacao$/) do
   page.has_content?('Candidato atualizado com sucesso')
 end
+
