@@ -1,88 +1,55 @@
-# Criar vaga com sucesso
-Given('que exista uma vaga com titulo: {string}, descricao: {string}, salario: {string}') do |titulo, descricao, salario|
-  Vaga.create!(titulo: titulo, descricao: descricao, salario: salario)
+Given(/^que eu esteja na pagina de criacao de vaga$/) do
+  pending
 end
 
-And('eu visito a pagina de criacao de vaga') do
-  visit new_vaga_path
+When(/^eu preencho os campos obrigatorios com os dados da vaga titulo: "([^"]*)", descricao: "([^"]*)", salario: "R\$ (\d+)\.(\d+),00"$/) do |arg1, arg2, arg3|
+  pending
 end
 
-When('eu crio a vaga com titulo: {string}, descricao: {string}, salario: {string}') do |titulo, descricao, salario|
-  fill_in 'Titulo', :with => titulo
-  fill_in 'Descricao', :with => descricao
-  fill_in 'Salario', :with => salario
-  click_button 'Criar Vaga'
+And(/^eu clico em 'Criar Vaga'$/) do
+  pending
 end
 
-Then('eu vejo uma mensagem que informa que a vaga foi criada com sucesso') do
-  page.has_content?('Vaga criada com sucesso.')
+Then(/^eu devo ser redirecionado para a pagina da vaga recem\-criada e vejo a mensagem "([^"]*)"$/) do |arg|
+  pending
 end
 
-
-# Criar vaga sem sucesso
-
-When('Preencho os campos de cadastro da vaga com os seguintes dados: titulo: {string}, descricao: {string}, salario: {string}') do |titulo, descricao, salario|
-  fill_in 'Titulo', :with => titulo
-  fill_in 'Descricao', :with => descricao
-  fill_in 'Salario', :with => salario
+Then(/^eu vejo uma mensagem que informa que a vaga não pode ser cadastrada com essa descricao$/) do
+  pending
 end
 
-Then('eu vejo uma mensagem que informa que a vaga não pode ser cadastrada com esse titulo') do
-  page.has_content?('Este título não pode ser cadastrado')
+Given(/^a vaga de titulo: "([^"]*)", descricao: "([^"]*)", salario: "R\$ (\d+)\.(\d+),00" existe$/) do |arg1, arg2, arg3|
+  pending
 end
 
-
-# Visualizar Vaga
-Given('que exista uma vaga com titulo: {string}, descricao: {string}, salario: {string}') do |titulo, descricao, salario|
-  Vaga.create!(titulo: titulo, descricao: descricao, salario: salario)
+And(/^que eu esteja na pagina de listagem de vagas$/) do
+  pending
 end
 
-Given("que eu esteja na pagina de listagem de vagas") do
-  visit vagas_path
+When(/^eu clico no botao 'Visualizar' da vaga com titulo: "([^"]*)", descricao: "([^"]*)", salario: "R\$ (\d+)\.(\d+),00"$/) do |arg1, arg2, arg3|
+  pending
 end
 
-When("eu clico no botao 'Visualizar' da vaga desejada") do
-  click_link "Visualizar"
+Then(/^eu devo ser redirecionado para a pagina da vaga selecionada e vejo a mensagem "([^"]*)"$/) do |arg|
+  pending
 end
 
-Then("eu devo ser redirecionado para a pagina da vaga selecionada") do
-  expect(page).to have_content("Descricao da vaga:")
+And(/^que eu esteja na pagina de edicao de vaga$/) do
+  pending
 end
 
-
-# Editar vaga com sucesso
-Given('que exista uma vaga com titulo: {string}, descricao: {string}, salario: {string}') do |titulo, descricao, salario|
-  Vaga.create!(titulo: titulo, descricao: descricao, salario: salario)
+When(/^eu altero os campos desejados da vaga, preenchendo a descricao com "([^"]*)" e clico em 'Atualizar Vaga'$/) do |arg|
+  pending
 end
 
-And("que eu esteja na pagina de edicao de vaga") do
-  visit edit_vaga_path(@vaga)
+Then(/^eu devo ser redirecionado para a pagina atualizada da vaga e vejo a mensagem "([^"]*)"$/) do |arg|
+  pending
 end
 
-When('eu altero os campos desejados da vaga com titulo: {string}, descricao: {string}, salario: {string}') do |titulo, descricao, salario|
-  fill_in "Descricao", with: "Vaga para desenvolvedor Ruby on Rails"
-  click_button "Atualizar Vaga"
+When(/^eu clico no botão 'Remover' da vaga com titulo: "([^"]*)", descricao: "([^"]*)", salario: "R\$ (\d+)\.(\d+),00"$/) do |arg1, arg2, arg3|
+  pending
 end
 
-Then("eu devo ser redirecionado para a pagina atualizada da vaga") do
-  expect(page).to have_content("Vaga atualizada com sucesso")
+Then(/^eu devo ser redirecionado para a pagina atualizada da vaga e vejo uma mensagem dizendo "([^"]*)"$/) do |arg|
+  pending
 end
-
-
-# Remover vaga com sucesso
-Given('que exista uma vaga com titulo: {string}, descricao: {string}, salario: {string}') do |titulo, descricao, salario|
-  Vaga.create!(titulo: titulo, descricao: descricao, salario: salario)
-end
-
-And("que eu esteja na pagina de vagas") do
-  visit vagas_path
-end
-
-When("eu clico no botao de remover da vaga com titulo: {string}, descricao: {string}, salario: {string}') do |titulo, descricao, salario|") do
-  click_link "Remover"
-end
-
-Then('eu vejo uma mensagem que informa que a vaga foi excluída com sucesso') do
-  page.has_content?('Vaga excluída com sucesso.')
-end
-
