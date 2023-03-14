@@ -1,4 +1,6 @@
 class Empregador < ApplicationRecord
+  has_many :vaga_de_empregos
+  has_many :candidatoes, through: :vaga_de_empregos
 
   validates :nome, :nomeEmpresa,:cnpj, :email, :telefone, :endereco, presence: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
