@@ -5,7 +5,7 @@ class CreateEmpregadors < ActiveRecord::Migration[7.0]
       t.string :nomeEmpresa
       t.string :email
       t.string :endereco
-      t.integer :telefone
+      t.string :telefone
       t.string :cnpj
 
       t.timestamps
