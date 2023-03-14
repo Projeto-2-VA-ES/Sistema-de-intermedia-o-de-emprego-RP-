@@ -15,8 +15,9 @@
   </p>
 
   <p>
-    <strong>Empregador:</strong>
-    <%= vaga_de_emprego.empregador_id %>
+    <strong>CNPJ do empregador:</strong>
+    <%empregador = Empregador.find(vaga_de_emprego.empregador_id) %>
+    <%= empregador.cnpj%>
   </p>
 
 </div>

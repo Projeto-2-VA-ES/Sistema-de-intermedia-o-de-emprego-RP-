@@ -1,5 +1,5 @@
 class Empregador < ApplicationRecord
-  has_many :vaga_de_empregos
+  has_many :vaga_de_empregos , dependent: :destroy
   has_many :candidatoes, through: :vaga_de_empregos
 
   validates :nome, :nomeEmpresa,:cnpj, :email, :telefone, :endereco, presence: true

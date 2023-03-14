@@ -1,6 +1,5 @@
 class VagaDeEmprego < ApplicationRecord
   belongs_to :empregador
-  belongs_to :candidato
   has_many :candidatoes
 
   validates :titulo, presence: true, length: { minimum: 5, maximum: 100 },
