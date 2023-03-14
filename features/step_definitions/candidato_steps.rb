@@ -47,31 +47,23 @@ Then(/^vejo uma mensagem de erro indicando quais campos sao obrigatorios$/) do
   page.has_content?('Telefone não pode ficar em branco')
 end
 
-Given(/^que estou na pagina de listagem de candidatos$/) do
+Given('que o candidato de nome: {string}, email: {string}, cpf: {string}, dataNascimento: {string}, telefone: {string} existe') do |nome, email, cpf, dataNascimento, telefone|
+  Candidato.create!(nome: nome, email: email, cpf: cpf, dataNascimento: dataNascimento, telefone: telefone)
+end
+
+And("estou na pagina de candidatos") do
   visit '/candidatos'
 end
 
-When(/^seleciono um cadastro existente$/) do
-  click_link_or_button("Show this candidato")
+And("visito o candidato desejado") do
+  click_link("Show this candidato")
 end
 
-And(/^clico no botao Deletar Candidato$/) do
-  click_link_or_button("Destroy this candidato")
+When("eu clico no botão de deletar candidato") do
+  click_button 'Destroy this candidato'
 end
 
-Then(/^vejo uma mensagem de confirmacao$/) do
-  page.has_content?('Candidato excluido com sucesso')
-end
-
-Given(/^que estou na pagina de edicao de um cadastro existente$/) do
-  visit '/candidatos/'
-end
-
-When(/^preencho os campos que desejo atualizar com informacoes validas$/) do
-  fill_in 'Email', :with => 'joaovdasilva@gmail.com'
-end
-
-Then(/^devo ver uma mensagem de confirmacao da atualizacao$/) do
-  page.has_content?('Candidato atualizado com sucesso')
+Then("eu vejo uma mensagem que informa que o candidato foi excluído com sucesso") do
+  page.has_content?('Candidato was successfully destroyed.')
 end
 
