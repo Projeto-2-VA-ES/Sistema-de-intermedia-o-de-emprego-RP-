@@ -49,15 +49,16 @@ Given('que o candidato de nome: {string}, email: {string}, cpf: {string}, dataNa
   Candidato.create!(nome: nome, email: email, cpf: cpf, dataNascimento: dataNascimento, telefone: telefone)
 end
 
-And("estou na pagina de candidatos") do
+When("estou na pagina de candidatos") do
   visit '/candidatos'
 end
 
 And("visito o candidato desejado") do
-  click_link("Show this candidato")
+  candidato = Candidato.last
+  visit candidato_path(candidato)
 end
 
-When("eu clico no botão de deletar candidato") do
+And("eu clico no botão de deletar candidato") do
   click_button 'Destroy this candidato'
 end
 
@@ -65,3 +66,18 @@ Then("eu vejo uma mensagem que informa que o candidato foi excluído com sucesso
   page.has_content?('Candidato was successfully destroyed.')
 end
 
+And(/^eu clico no link de editar candidato$/) do
+  click_link_or_button 'Edit this candidato'
+end
+
+And(/^preencho os campos que desejo atualizar com informacoes validas$/) do
+  fill_in 'Email', :with => 'victor@13gmail.com'
+end
+
+And(/^clico em Atualizar Candidato$/) do
+  click_button 'Update Candidato'
+end
+
+Then(/^devo ver uma mensagem de confirmacao da atualizacao$/) do
+  page.has_content?('Candidato atualizado com sucesso')
+end
