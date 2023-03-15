@@ -25,9 +25,9 @@ Feature: Candidato
     #DELETAR CADASTRO
   Scenario: Excluir candidato com sucesso
     Given que o candidato de nome: "Victor Santos", email: "victor@gmail.com", cpf: "11111111176", dataNascimento: "21-01-2001", telefone: "87-99999-6666" existe
-    And estou na pagina de candidatos
+    When estou na pagina de candidatos
     And visito o candidato desejado
-    When eu clico no botão de deletar candidato
+    And eu clico no botão de deletar candidato
     Then eu vejo uma mensagem que informa que o candidato foi excluído com sucesso
 
     #EDITAR CADASTRO

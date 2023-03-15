@@ -51,7 +51,7 @@ Given('que o candidato de nome: {string}, email: {string}, cpf: {string}, dataNa
   Candidato.create!(nome: nome, email: email, cpf: cpf, dataNascimento: dataNascimento, telefone: telefone)
 end
 
-And("estou na pagina de candidatos") do
+When("estou na pagina de candidatos") do
   visit '/candidatos'
 end
 
@@ -59,7 +59,7 @@ And("visito o candidato desejado") do
   click_link("Show this candidato")
 end
 
-When("eu clico no botão de deletar candidato") do
+And("eu clico no botão de deletar candidato") do
   click_button 'Destroy this candidato'
 end
 
