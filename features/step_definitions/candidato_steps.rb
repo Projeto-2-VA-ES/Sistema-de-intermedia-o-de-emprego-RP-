@@ -3,11 +3,9 @@ Given(/^que eu estou na pagina de cadastro de candidato$/) do
 end
 
 When(/^eu preencho os campos obrigatorios com informacoes validas$/) do
-  fill_in 'Nome', :with => 'Joao'
-  fill_in 'Email', :with => 'joaodasilva@gmail.com'
-  fill_in 'Cpf', :with => '12345678901'
-  fill_in 'Datanascimento', :with => '01/01/1990'
-  fill_in 'Telefone', :with => '11-12345-1234'
+
+  Candidato.create!(nome: "Joao", email: 'joaodasilva@gmail.com', cpf: '12345678901', dataNascimento: '2000-01-01', telefone: '11-12345-1234')
+
 end
 
 And(/^clico em Salvar Candidato$/) do
