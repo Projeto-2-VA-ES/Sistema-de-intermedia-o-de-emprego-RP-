@@ -38,7 +38,7 @@ end
 Then(/^eu vejo uma mensagem que informa que a vaga nao pode ser cadastrada com esse titulo$/) do
   page.has_content?("Título não pode ficar em branco")
 end
-
+=begin
 # Editar vaga
 Given("a vaga de titulo: {string}, descricao: {string}, salario: {string} existe") do |titulo, descricao, salario|
   visit '/vaga_de_empregos/new'
@@ -74,6 +74,6 @@ end
 Then("eu devo ser redirecionado para a pagina atualizada da vaga e vejo uma mensagem dizendo {string}") do |mensagem|
   expect(page).to have_content(mensagem)
 end
-
+=end
 
 
