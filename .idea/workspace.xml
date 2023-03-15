@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="20952a9b-1255-4a91-b91a-58ae4d6a3581" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/vaga_de_empregos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/vaga_de_empregos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/step_definitions/vaga_steps.rb" beforeDir="false" afterPath="$PROJECT_DIR$/features/step_definitions/vaga_steps.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/vaga.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/vaga.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,6 +233,7 @@
       <workItem from="1678823190726" duration="2034000" />
       <workItem from="1678830788365" duration="907000" />
       <workItem from="1678834032962" duration="2175000" />
+      <workItem from="1678850569292" duration="9565000" />
     </task>
     <servers />
   </component>
