@@ -26,12 +26,12 @@
     <%= form.text_field :salario %>
   </div>
 
-  <div>
-    <%= form.label :empregador_id, style: "display: block" %>
-    <%= form.text_field :empregador_id %>
+  <div class="field">
+    <%= form.label :empregador_id %>
+    <%= form.collection_select(:empregador_id, Empregador.all, :id, :cnpj, {:selected => @vaga_de_emprego.empregador_id})%>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Criar Vaga", class: "btn btn-primary btn-lg" %>
   </div>
 <% end %>

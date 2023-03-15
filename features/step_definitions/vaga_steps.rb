@@ -1,6 +1,18 @@
 #Criar vaga com sucesso
-Given(/^que eu esteja na pagina de criacao de vaga$/) do
-  visit '/vaga_de_empregos/new'
+Given('O empregador de nomeEmpresa: {string}, nome: {string}, endereco: {string}, email: {string}, cnpj: {string}, telefone: {string} existe') do |nomeEmpresa, nome, endereco, email, cnpj, telefone|
+  visit '/empregadors/new'
+  fill_in 'Nomeempresa', with: nomeEmpresa
+  fill_in 'Nome', with: nome
+  fill_in 'Endereco', with: endereco
+  fill_in 'Email', with: email
+  fill_in 'Cnpj', with: cnpj
+  fill_in 'Telefone', with: telefone
+  click_button 'Create Empregador'
+end
+
+And(/^que eu esteja na pagina de criacao de vaga$/) do
+  empregador = Empregador.first
+  visit(empregador_path(empregador))
 end
 
 When("eu preencho os campos obrigatorios com os dados da vaga titulo: {string}, descricao: {string}, salario: {string}") do |titulo, descricao, salario|
@@ -9,17 +21,17 @@ When("eu preencho os campos obrigatorios com os dados da vaga titulo: {string}, 
   fill_in 'Salario', with: salario
 end
 
-And(/^eu clico em 'Criar Vaga'$/) do
+And(/^eu clico em criar Vaga$/) do
   click_on 'Create Vaga de emprego'
 end
 
 Then(/^eu devo ser redirecionado para a pagina da vaga recem-criada e vejo a mensagem "([^"]*)"$/) do |mensagem|
-  expect(page).to have_content(mensagem)
+  page.has_content?(mensagem)
 end
 
 #Criar vaga sem sucesso
 Then(/^eu vejo uma mensagem que informa que a vaga não pode ser cadastrada com essa descricao$/) do
-  expect(page).to have_content("Descricão não pode ficar em branco")
+  page.has_content?("Descricão não pode ficar em branco")
 end
 
 # Visualizar vaga
@@ -67,3 +79,4 @@ end
 Then("eu devo ser redirecionado para a pagina atualizada da vaga e vejo uma mensagem dizendo {string}") do |mensagem|
   expect(page).to have_content(mensagem)
 end
+
