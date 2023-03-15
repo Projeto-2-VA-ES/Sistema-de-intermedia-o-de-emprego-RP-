@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="20952a9b-1255-4a91-b91a-58ae4d6a3581" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/vaga_de_empregos/_vaga_de_emprego.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/vaga_de_empregos/_vaga_de_emprego.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/step_definitions/candidato_steps.rb" beforeDir="false" afterPath="$PROJECT_DIR$/features/step_definitions/candidato_steps.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +19,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -222,6 +234,7 @@
       <workItem from="1678812552934" duration="702000" />
       <workItem from="1678823190726" duration="2034000" />
       <workItem from="1678830788365" duration="907000" />
+      <workItem from="1678834032962" duration="2175000" />
     </task>
     <servers />
   </component>
@@ -244,6 +257,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Sistema_de_intermediacao_o_de_emprego@Development__Sistema_de_intermediacao_o_de_emprego.rcov" NAME="Development: Sistema-de-intermediacao-o-de-emprego Coverage Results" MODIFIED="1678366371541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Sistema-de-intermediacao-o-de-emprego" />
-    <SUITE FILE_PATH="coverage/Sistema_de_intermediacao_de_emprego@Development__Sistema_de_intermediacao_o_de_emprego.rcov" NAME="Development: Sistema-de-intermediacao-o-de-emprego Coverage Results" MODIFIED="1678830961526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Sistema-de-intermediacao-o-de-emprego" />
+    <SUITE FILE_PATH="coverage/Sistema_de_intermediacao_de_emprego@Development__Sistema_de_intermediacao_o_de_emprego.rcov" NAME="Development: Sistema-de-intermediacao-o-de-emprego Coverage Results" MODIFIED="1678834418023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Sistema-de-intermediacao-o-de-emprego" />
   </component>
 </project>
