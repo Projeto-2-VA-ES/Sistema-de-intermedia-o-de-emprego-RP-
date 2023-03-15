@@ -5,17 +5,18 @@ Feature: Vaga
 
   # Criar vaga
   Scenario: Criar vaga com sucesso
-    Given que eu esteja na pagina de criacao de vaga
+    Given O empregador de nomeEmpresa: "Empresa ABC", nome: "João da Silva", endereco: 'Rua B, 456', email: 'joao.silva@example.com', cnpj: '98.765.432/0001-99', telefone: '11-44444-4444' existe
+    And que eu esteja na pagina de criacao de vaga
     When eu preencho os campos obrigatorios com os dados da vaga titulo: "Desenvolvedor Ruby", descricao: "Vaga para desenvolvedor Ruby", salario: "R$ 5.000,00"
-    And eu clico em 'Criar Vaga'
+    And eu clico em criar Vaga
     Then eu devo ser redirecionado para a pagina da vaga recem-criada e vejo a mensagem "Vaga criada com sucesso"
 
   Scenario: Criar vaga sem sucesso
-    Given que eu esteja na pagina de criacao de vaga
+    Given O empregador de nomeEmpresa: "Empresa ABC", nome: "João da Silva", endereco: 'Rua B, 456', email: 'joao.silva@example.com', cnpj: '98.765.432/0001-99', telefone: '11-44444-4444' existe
+    And que eu esteja na pagina de criacao de vaga
     When eu preencho os campos obrigatorios com os dados da vaga titulo: "Desenvolvedor Ruby", descricao: "", salario: "R$ 5.000,00"
-    And eu clico em 'Criar Vaga'
+    And eu clico em criar Vaga
     Then eu vejo uma mensagem que informa que a vaga não pode ser cadastrada com essa descricao
-
 
   # Visualizar vaga
   Scenario: Visualizar vaga com sucesso
