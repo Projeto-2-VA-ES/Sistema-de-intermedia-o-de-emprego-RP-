@@ -31,11 +31,13 @@ Feature: Candidato
     Then eu vejo uma mensagem que informa que o candidato foi excluído com sucesso
 
     #EDITAR CADASTRO
-  #Scenario: Editar cadastro existente com informacoes validas
-  #  Given que estou na pagina de edicao de um cadastro existente
-  #  When preencho os campos que desejo atualizar com informacoes validas
-  #  And clico em Salvar Candidato
-  #  Then devo ver uma mensagem de confirmacao da atualizacao
+    Given que o candidato de nome: "Victor Santos", email: "victor@gmail.com", cpf: "11111111176", dataNascimento: "21-01-2001", telefone: "87-99999-6666" existe
+    When estou na pagina de candidatos
+    And visito o candidato desejado
+    And eu clico no link de editar candidato
+    And preencho os campos que desejo atualizar com informacoes validas
+    And clico em Atualizar Candidato
+    Then devo ver uma mensagem de confirmacao da atualizacao
 
 
 
