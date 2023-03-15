@@ -29,12 +29,17 @@ Then(/^eu devo ser redirecionado para a pagina da vaga recem-criada e vejo a men
   page.has_content?(mensagem)
 end
 
-#Criar vaga sem sucesso
-Then(/^eu vejo uma mensagem que informa que a vaga não pode ser cadastrada com essa descricao$/) do
+#Criar vaga sem sucesso 1
+Then(/^eu vejo uma mensagem que informa que a vaga nao pode ser cadastrada com essa descricao$/) do
   page.has_content?("Descricão não pode ficar em branco")
 end
 
-# Visualizar vaga
+#Criar vaga sem sucesso 2
+Then(/^eu vejo uma mensagem que informa que a vaga nao pode ser cadastrada com esse titulo$/) do
+  page.has_content?("Título não pode ficar em branco")
+end
+
+# Editar vaga
 Given("a vaga de titulo: {string}, descricao: {string}, salario: {string} existe") do |titulo, descricao, salario|
   visit '/vaga_de_empregos/new'
   fill_in 'Titulo', with: titulo
@@ -42,22 +47,8 @@ Given("a vaga de titulo: {string}, descricao: {string}, salario: {string} existe
   fill_in 'Salario', with: salario
 end
 
-And(/^que eu esteja na pagina de listagem de vagas$/) do
-  visit '/vaga_de_empregos'
-end
-
-When("eu clico no botao 'Visualizar' da vaga com titulo: {string}, descricao: {string}, salario: {string}") do |titulo, descricao, salario|
-  vaga = Vaga.find_by(titulo: titulo, descricao: descricao, salario: salario)
-  find("a[href='/vagas/#{vaga.id}']").click
-end
-
-Then(/^eu devo ser redirecionado para a pagina da vaga selecionada e vejo a mensagem "([^"]*)"$/) do |mensagem|
-  expect(page).to have_content(mensagem)
-end
-
-# Editar vaga
 And(/^que eu esteja na pagina de edicao de vaga$/) do
-  vaga = Vaga.last
+  vaga = VagaDeEmprego.last
   visit "/vagas/#{vaga.id}/edit"
 end
 
@@ -71,12 +62,18 @@ Then(/^eu devo ser redirecionado para a pagina atualizada da vaga e vejo a mensa
 end
 
 # Remover vaga
+And(/^que eu esteja na pagina de listagem de vagas$/) do
+  visit '/vaga_de_empregos'
+end
+
 When("eu clico no botao 'Remover' da vaga com titulo: {string}, descricao: {string}, salario: {string}") do |titulo, descricao, salario|
-  vaga = Vaga.find_by(titulo: titulo, descricao: descricao, salario: salario)
+  vaga = VagaDeEmprego.find_by(titulo: titulo, descricao: descricao, salario: salario)
   find("a[href='/vagas/#{vaga.id}'][data-method='delete']").click
 end
 
 Then("eu devo ser redirecionado para a pagina atualizada da vaga e vejo uma mensagem dizendo {string}") do |mensagem|
   expect(page).to have_content(mensagem)
 end
+
+
 

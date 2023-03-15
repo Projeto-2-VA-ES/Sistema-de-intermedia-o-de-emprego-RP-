@@ -30,7 +30,7 @@ class VagaDeEmpregosController < ApplicationController
   def update
     respond_to do |format|
       if @vaga_de_emprego.update(vaga_de_emprego_params)
-        format.html { redirect_to vaga_de_emprego_url(@vaga_de_emprego), notice: "Vaga de emprego was successfully updated." }
+        format.html { redirect_to vaga_de_emprego_url(@vaga_de_emprego), notice: "Vaga de emprego foi atualizada com sucesso." }
         format.json { render :show, status: :ok, location: @vaga_de_emprego }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -44,7 +44,7 @@ class VagaDeEmpregosController < ApplicationController
     @vaga_de_emprego.destroy
 
     respond_to do |format|
-      format.html { redirect_to vaga_de_empregos_url, notice: "Vaga de emprego was successfully destroyed." }
+      format.html { redirect_to vaga_de_empregos_url, notice: "Vaga de emprego foi destruida com sucesso." }
       format.json { head :no_content }
     end
   end
