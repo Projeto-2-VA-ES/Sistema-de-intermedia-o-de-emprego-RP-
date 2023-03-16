@@ -1,5 +1,4 @@
 class Candidato < ApplicationRecord
-  has_many :vaga_de_empregos
   has_many :empregadors, through: :vaga_de_empregos
 
   validates :nome, presence: true, exclusion: { in: %w(!@#$%¨&*()_+=[{]};:?/'")}, length: { minimum: 2 }
