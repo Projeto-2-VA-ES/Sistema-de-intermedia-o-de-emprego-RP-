@@ -54,6 +54,6 @@ jobs:
         run: |
           bundle exec rails db:prepare
           bundle exec cucumber
-          bundle exec rails -e actions test/models/candidato_test.rb
-          bundle exec rails -e actions test/models/empregador_test.rb
-          bundle exec rails -e actions test/models/vaga_de_emprego_test.rb
+          bundle exec rails test/models/candidato_test.rb
+          bundle exec rails test/models/empregador_test.rb
+          bundle exec rails test/models/vaga_de_emprego_test.rb
