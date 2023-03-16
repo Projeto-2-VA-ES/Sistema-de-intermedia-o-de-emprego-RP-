@@ -5,14 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20952a9b-1255-4a91-b91a-58ae4d6a3581" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/vaga_de_empregos/disponiveis.html.erb.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20230316003735_create_join_table_candidato_vaga_de_emprego.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/entrevistadors_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/helpers/entrevistadors_helper.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/entrevistador.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/entrevistadors/_entrevistador.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/entrevistadors/_entrevistador.json.jbuilder" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/entrevistadors/_form.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/entrevistadors/edit.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/entrevistadors/index.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/entrevistadors/index.json.jbuilder" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/entrevistadors/new.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/entrevistadors/show.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/entrevistadors/show.json.jbuilder" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20230316014640_create_entrevistadors.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/controllers/entrevistadors_controller_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/fixtures/entrevistadors.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/models/entrevistador_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/system/entrevistadors_test.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/candidatos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/candidatos_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/vaga_de_empregos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/vaga_de_empregos_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/candidato.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/candidato.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/vaga_de_emprego.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/vaga_de_emprego.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/candidatos/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/candidatos/show.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
@@ -250,7 +260,7 @@
       <workItem from="1678834032962" duration="2175000" />
       <workItem from="1678850569292" duration="9565000" />
       <workItem from="1678923172025" duration="339000" />
-      <workItem from="1678924697310" duration="5251000" />
+      <workItem from="1678924697310" duration="6395000" />
     </task>
     <servers />
   </component>
