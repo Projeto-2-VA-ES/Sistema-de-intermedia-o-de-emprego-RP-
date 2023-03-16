@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mensagem: MyText
+  candidato: one
+  vaga_de_empregos: one
+
+two:
+  mensagem: MyText
+  candidato: two
+  vaga_de_empregos: two

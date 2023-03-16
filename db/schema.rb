@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_16_015408) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_16_020707) do
   create_table "candidatos", force: :cascade do |t|
     t.string "nome"
     t.string "email"
@@ -24,6 +24,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_16_015408) do
   create_table "candidatos_vagas_de_empregos", id: false, force: :cascade do |t|
     t.integer "candidato_id", null: false
     t.integer "vagas_de_emprego_id", null: false
+  end
+
+  create_table "candidaturas", force: :cascade do |t|
+    t.text "mensagem"
+    t.integer "candidato_id", null: false
+    t.integer "vaga_de_empregos_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["candidato_id"], name: "index_candidaturas_on_candidato_id"
+    t.index ["vaga_de_empregos_id"], name: "index_candidaturas_on_vaga_de_empregos_id"
   end
 
   create_table "curriculos", force: :cascade do |t|
@@ -69,6 +79,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_16_015408) do
     t.index ["empregador_id"], name: "index_vaga_de_empregos_on_empregador_id"
   end
 
+  add_foreign_key "candidaturas", "candidatos"
+  add_foreign_key "candidaturas", "vaga_de_empregos", column: "vaga_de_empregos_id"
   add_foreign_key "curriculos", "candidatos"
   add_foreign_key "entrevistadors", "vaga_de_empregos", column: "vaga_de_empregos_id"
   add_foreign_key "vaga_de_empregos", "empregadors"
