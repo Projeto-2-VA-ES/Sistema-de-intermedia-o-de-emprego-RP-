@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :curriculos
   resources :entrevistadors
   resources :candidatos
   resources :empregadors do
