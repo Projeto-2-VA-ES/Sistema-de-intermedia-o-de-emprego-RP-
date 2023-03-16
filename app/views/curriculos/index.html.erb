@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Curriculos</h1>
+
+<div id="curriculos">
+  <% @curriculos.each do |curriculo| %>
+    <%= render curriculo %>
+    <p>
+      <%= link_to "Show this curriculo", curriculo %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New curriculo", new_curriculo_path %>

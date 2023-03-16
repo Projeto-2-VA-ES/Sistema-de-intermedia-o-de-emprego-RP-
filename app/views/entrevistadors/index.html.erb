@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Entrevistadors</h1>
+
+<div id="entrevistadors">
+  <% @entrevistadors.each do |entrevistador| %>
+    <%= render entrevistador %>
+    <p>
+      <%= link_to "Show this entrevistador", entrevistador %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New entrevistador", new_entrevistador_path %>

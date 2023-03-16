@@ -1,0 +1,47 @@
+<%= form_with(model: curriculo) do |form| %>
+  <% if curriculo.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(curriculo.errors.count, "error") %> prohibited this curriculo from being saved:</h2>
+
+      <ul>
+        <% curriculo.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nome, style: "display: block" %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div>
+    <%= form.label :objetivo, style: "display: block" %>
+    <%= form.text_area :objetivo %>
+  </div>
+
+  <div>
+    <%= form.label :experiencia_profissional, style: "display: block" %>
+    <%= form.text_area :experiencia_profissional %>
+  </div>
+
+  <div>
+    <%= form.label :formacao_academica, style: "display: block" %>
+    <%= form.text_area :formacao_academica %>
+  </div>
+
+  <div>
+    <%= form.label :habilidades, style: "display: block" %>
+    <%= form.text_area :habilidades %>
+  </div>
+
+  <div>
+    <%= form.label :candidato_id, style: "display: block" %>
+    <%= form.text_field :candidato_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
