@@ -68,3 +68,8 @@ class CandidatosController < ApplicationController
       params.require(:candidato).permit(:nome, :email, :cpf, :dataNascimento, :telefone)
     end
 end
+
+def vagas_disponiveis
+  @candidato = current_candidato # assuming you're using Devise for authentication
+  render 'vaga_de_empregos/index/disponiveis'
+end

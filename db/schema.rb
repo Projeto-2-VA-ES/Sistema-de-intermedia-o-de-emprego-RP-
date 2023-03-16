@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_25_234349) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_16_003735) do
   create_table "candidatos", force: :cascade do |t|
     t.string "nome"
     t.string "email"
@@ -19,6 +19,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_25_234349) do
     t.string "telefone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "candidatos_vagas_de_empregos", id: false, force: :cascade do |t|
+    t.integer "candidato_id", null: false
+    t.integer "vagas_de_emprego_id", null: false
   end
 
   create_table "empregadors", force: :cascade do |t|

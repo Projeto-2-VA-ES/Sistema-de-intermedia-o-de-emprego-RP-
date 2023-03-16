@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Vagas de Emprego Disponíveis</h1>
+
+<ul>
+    <% @vaga_de_empregos.each do |vaga_de_empregos| %>
+    <li>
+        <strong><%= vaga_de_empregos.titulo %></strong><br>
+        <%= vaga_de_empregos.descricao %><br>
+        Salário: <%= number_to_currency(vaga_de_empregos.salario) %><br>
+        Empregador: <%= vaga_de_empregos.empregador.nome %><br>
+        <%= link_to 'Aplicar', new_candidato_aplicacao_path(@candidato, vaga_de_empregos) %>
+    </li>
+    <% end %>
+</ul>
+
+</body>
+</html>

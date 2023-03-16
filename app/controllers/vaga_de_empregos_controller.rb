@@ -39,6 +39,11 @@ class VagaDeEmpregosController < ApplicationController
     end
   end
 
+  def disponiveis
+    @vagas_de_emprego = VagaDeEmprego.all
+  end
+
+
   # DELETE /vaga_de_empregos/1 or /vaga_de_empregos/1.json
   def destroy
     @vaga_de_emprego.destroy
