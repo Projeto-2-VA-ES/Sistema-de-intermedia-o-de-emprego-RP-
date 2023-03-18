@@ -1,5 +1,6 @@
 class Candidato < ApplicationRecord
   has_many :empregadors, through: :vaga_de_empregos
+  has_many :candidaturas, dependent: :destroy
 
   validates :nome, presence: true, exclusion: { in: %w(!@#$%¨&*()_+=[{]};:?/'")}, length: { minimum: 2 }
   validates :email, presence: true, length: {minimum: 11}, uniqueness: true
