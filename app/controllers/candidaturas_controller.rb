@@ -60,7 +60,8 @@ class CandidaturasController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_candidatura
-      @candidatura = Candidatura.find(params[:id])
+      @user = User.find(params[:user_id])
+      @candidatura = @user.candidaturas.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
