@@ -16,8 +16,8 @@ class CandidatoTest < ActiveSupport::TestCase
   test "salvar candidato sem nome" do
     candidato = Candidato.new
     candidato.nome = ""
-    candidato.email = "12345678901"
-    candidato.cpf = "luiz@gmail.com"
+    candidato.email = "luiz@gmail.com"
+    candidato.cpf = "72345678901"
     candidato.dataNascimento = "12-02-2002"
     candidato.telefone = "87-99208-9858"
 
@@ -28,7 +28,7 @@ class CandidatoTest < ActiveSupport::TestCase
     candidato = Candidato.new
     candidato.nome = ""
     candidato.email = "12345678901"
-    candidato.cpf = ""
+    candidato.cpf = "72345678901"
     candidato.dataNascimento = "12-02-2002"
     candidato.telefone = "87-99208-9858"
 

@@ -18,7 +18,7 @@ class EmpregadorTest < ActiveSupport::TestCase
     empregador = Empregador.new
     empregador.nome = "Rian Wilker"
     empregador.nomeEmpresa = "Frios LDTA"
-    empregador.cnpj = "12.345.678/0001-00"
+    empregador.cnpj = ""
     empregador.telefone = "87-99258-9444"
     empregador.endereco = "Rua Almir Pacheco"
 
