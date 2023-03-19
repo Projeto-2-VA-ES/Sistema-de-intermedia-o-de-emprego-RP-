@@ -57,3 +57,6 @@ jobs:
           bundle exec rails test/models/candidato_test.rb
           bundle exec rails test/models/empregador_test.rb
           bundle exec rails test/models/vaga_de_emprego_test.rb
+          bundle exec rails test/models/candidatura_test.rb
+          bundle exec rails test/models/curriculo_test.rb
+          bundle exec rails test/models/entrevistador_test.rb
