@@ -5,7 +5,7 @@ end
 When(/^eu preencho os campos obrigatorios com informacoes validas$/) do
 
   Candidato.create!(nome: "Joao", email: 'joaodasilva@gmail.com', cpf: '12345678901', dataNascimento: '2000-01-01', telefone: '11-12345-1234')
-
+  Curriculo.create!(nome: "Joao", objetivo:'Trabalhar na área administrativa',experiencia_profissional:'10 anso na área',formacao_academica:'Administração',habilidades:'inglês fluente',candidato_id:1)
 end
 
 And(/^clico em Salvar Candidato$/) do
