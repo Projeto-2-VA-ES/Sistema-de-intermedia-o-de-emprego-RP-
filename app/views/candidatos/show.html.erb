@@ -1,6 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @candidato %>
+<div>
+  <h2>Currículo</h2>
+</div>
 <%= render @curriculo %>
 
 
@@ -11,9 +14,8 @@
   <%= button_to "Destroy this candidato", @candidato, method: :delete %>
 
   <%= link_to 'Currículo',  curriculos_path %> |
-  <%= link_to 'Vagas Disponíveis',  vaga_de_empregos_path %>
-
-  <%= link_to "new_candidatura", new_candidatura_path(candidato_id: @candidato.id) %>
+  <%= link_to 'Vagas Disponíveis',  vaga_de_empregos_path %> |
+  <%= link_to 'Nova candidatura', new_candidatura_path(candidato_id: @candidato.id) %>
 
 
 
