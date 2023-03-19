@@ -1,6 +1,7 @@
 class VagaDeEmprego < ApplicationRecord
   belongs_to :empregador
-  belongs_to :candidatos
+  has_many :candidaturas
+  has_many :candidatos, through: :candidaturas
 
   validates :titulo, presence: true, length: { minimum: 5, maximum: 100 },
             format: { with: /\A[a-zA-Z0-9\s]+\z/, message: "apenas letras, números e espaços são permitidos" }
