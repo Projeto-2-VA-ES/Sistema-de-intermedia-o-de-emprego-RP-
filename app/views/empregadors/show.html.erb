@@ -2,8 +2,8 @@
 
 <%= render @empregador %>
 
-<h2>Vagas de Emprego</h2>
-<%= render @empregador.vaga_de_empregos %>
+<h2>Vagas de Emprego Criadas</h2>
+<%= render @empregador.vaga_de_empregos%>
 
 <h2>Crie Vagas de Emprego</h2>
 <%= form_with model: [ @empregador, VagaDeEmprego.new ] do |form| %>

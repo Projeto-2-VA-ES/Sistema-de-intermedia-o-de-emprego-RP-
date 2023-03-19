@@ -13,6 +13,10 @@ Rails.application.routes.draw do
       get 'disponiveis'
     end
   end
+
+
+  post '/candidaturas', to: 'candidaturas#create', as: 'new_candidatura'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

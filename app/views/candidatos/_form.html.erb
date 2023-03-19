@@ -10,33 +10,61 @@
       </ul>
     </div>
   <% end %>
-
   <div>
-    <%= form.label :nome, style: "display: block" %>
-    <%= form.text_field :nome %>
+    <div>
+      <%= form.label :nome, style: "display: block" %>
+      <%= form.text_field :nome %>
+    </div>
+
+    <div>
+      <%= form.label :email, style: "display: block" %>
+      <%= form.text_field :email %>
+    </div>
+
+    <div>
+      <%= form.label :cpf, style: "display: block" %>
+      <%= form.text_field :cpf %>
+    </div>
+
+    <div>
+      <%= form.label :dataNascimento, style: "display: block" %>
+      <%= form.date_field :dataNascimento %>
+    </div>
+
+    <div>
+      <%= form.label :telefone, style: "display: block" %>
+      <%= form.text_field :telefone %>
+    </div>
+
+    <div class="field">
+      <%= form.fields_for :curriculo do |curriculo| %>
+        <div>
+          <%= curriculo.label :nome, style: "display: block" %>
+          <%= curriculo.text_field :nome %>
+        </div>
+        <div>
+          <%= curriculo.label :objetivo, style: "display: block"   %>
+          <%= curriculo.text_field :objetivo %>
+        </div>
+        <div>
+          <%= curriculo.label :experiencia_profissional, style: "display: block"  %>
+          <%= curriculo.text_field :experiencia_profissional %>
+        </div>
+        <div>
+          <%= curriculo.label :formacao_academica, style: "display: block"  %>
+          <%= curriculo.text_field :formacao_academica %>
+        </div>
+        <div>
+          <%= curriculo.label :habilidades, style: "display: block"  %>
+          <%= curriculo.text_field :habilidades %>
+        </div>
+      <% end %>
+    </div>
+
   </div>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
-  </div>
 
   <div>
-    <%= form.label :cpf, style: "display: block" %>
-    <%= form.text_field :cpf %>
-  </div>
-
-  <div>
-    <%= form.label :dataNascimento, style: "display: block" %>
-    <%= form.date_field :dataNascimento %>
-  </div>
-
-  <div>
-    <%= form.label :telefone, style: "display: block" %>
-    <%= form.text_field :telefone %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit%>
   </div>
 <% end %>
