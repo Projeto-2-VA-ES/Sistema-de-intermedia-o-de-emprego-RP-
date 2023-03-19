@@ -27,8 +27,8 @@
   </div>
 
   <div>
-    <%= form.label :vaga_de_empregos_id, style: "display: block" %>
-    <%= form.text_field :vaga_de_empregos_id %>
+    <%= form.label :vaga_de_emprego_id, style: "display: block" %>
+    <%= form.select :vaga_de_emprego_id, options_for_select(VagaDeEmprego.all.map{ |v| [v.titulo, v.id] }) %>
   </div>
 
   <div>
