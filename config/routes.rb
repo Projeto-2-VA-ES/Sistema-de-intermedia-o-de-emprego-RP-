@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   end
 
 
-  post '/candidaturas', to: 'candidaturas#create', as: 'new_candidatura'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

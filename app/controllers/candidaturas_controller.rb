@@ -1,6 +1,9 @@
 class CandidaturasController < ApplicationController
   before_action :set_candidatura, only: %i[ show edit update destroy ]
 
+  def current_candidato
+    @current_candidato ||= Candidato.find(session[:candidato_id]) if session[:candidato_id]
+  end
   # GET /candidaturas or /candidaturas.json
   def index
     @candidaturas = Candidatura.all
@@ -21,7 +24,8 @@ class CandidaturasController < ApplicationController
 
   # POST /candidaturas or /candidaturas.json
   def create
-    @candidatura = Candidatura.new(candidatura_params)
+    @candidato = Candidato.find(params[:candidato_id])
+    @candidatura = @candidato.curriculo.create(curriculo_params)
 
     respond_to do |format|
       if @candidatura.save
