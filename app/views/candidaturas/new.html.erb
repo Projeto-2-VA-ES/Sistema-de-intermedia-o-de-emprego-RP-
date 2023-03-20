@@ -1,36 +1,9 @@
-<h1>New Candidatura</h1>
+<h1>New candidatura</h1>
 
-<%= form_for [@candidato, @candidatura] do |f| %>
-  <% if @candidatura.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@candidatura.errors.count, "error") %> prohibited this candidatura from being saved:</h2>
-      <ul>
-        <% @candidatura.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div>
-    <%= f.label :mensagem%>
-    <%= f.text_area :mensagem %>
-  </div>
+<%= render "form", candidatura: @candidatura %>
 
-  <div>
-    <%= f.label :candidato_id%>
-    <%= f.text_area :candidato_id%>
+<br>
 
-  </div>
-
-
-  <div class="field">
-    <%= f.label :vaga_de_emprego_id %>
-    <%= f.text_area :vaga_de_empregos_id%>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Create Candidatura" %>
-  </div>
-<% end %>
-
-<%= link_to 'Back', candidato_path(@candidato) %>
+<div>
+  <%= link_to "Back to candidaturas", candidaturas_path %>
+</div>
