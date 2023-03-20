@@ -34,3 +34,15 @@ Then(/^eu vejo a mensagem curriculo editado com sucesso$/) do
   page.has_content?('Curriculo was successfully updated.')
 end
 
+And(/^eu clico em deletar$/) do
+  click_button 'Destroy this curriculo'
+end
+
+Then(/^eu vejo a mensagem curriculo deletado com sucesso$/) do
+  page.has_content?('Curriculo was successfully destroyed.')
+end
+
+Then(/^devo ver uma mensagem de erro indicando que o email é invalido e que o curriculo nao foi cadastrado$/) do
+  page.has_content?('Email is invalid')
+  page.has_content?('Curriculo was not created')
+end
