@@ -8,7 +8,25 @@ class CandidatosController < ApplicationController
 
   # GET /candidatos/1 or /candidatos/1.json
   def show
+    @candidaturas = Candidatura.all.where(:candidato_id => params[:id])
   end
+
+  def newCandidatura
+    @candidato = Candidato.find(params[:id])
+    @candidatura = @candidato.candidaturas.build
+
+  end
+
+  def createCandidatura
+    @candidato = Candidato.find(params[:id])
+    @candidatura = @candidato.candidaturas.build(candidatura_params)
+    if @candidatura.save
+      redirect_to @candidato, notice: "Candidatura was successfully created."
+    else
+      render :newCandidatura
+    end
+  end
+
 
   # GET /candidatos/new
   def new
@@ -68,6 +86,10 @@ class CandidatosController < ApplicationController
     @curriculo = Curriculo.find_by_candidato_id(@candidato.id)
   end
 
+  def candidatura_params
+    params.require(:candidatura).permit(:mensagem,:vaga_de_empregos_id)
+  end
+
   # Only allow a list of trusted parameters through.
   def candidato_params
     params.require(:candidato).permit(:nome, :email, :cpf, :dataNascimento, :telefone, curriculo_attributes: [:nome, :objetivo, :experiencia_profissional, :formacao_academica, :habilidades, :candidato_id])
@@ -81,5 +103,7 @@ class CandidatosController < ApplicationController
     @candidato = current_candidato # assuming you're using Devise for authentication
     render 'vaga_de_empregos/index/disponiveis'
   end
+
+
 
 end
