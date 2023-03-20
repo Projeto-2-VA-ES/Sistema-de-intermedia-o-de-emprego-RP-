@@ -8,7 +8,7 @@ class EntrevistadorTest < ActiveSupport::TestCase
     entrevistador.telefone = "87-99999-6969"
     entrevistador.vaga_de_empregos = vaga_de_empregos(:uma_vaga)
 
-    assert entrevistador.save, "criacao de entrevistador com atributos validos"
+    assert entrevistador.save, "Entrevistador criado com sucesso."
   end
 
   test "criacao de entrevistador sem nome" do
@@ -18,7 +18,7 @@ class EntrevistadorTest < ActiveSupport::TestCase
     entrevistador.telefone = "87-99999-6969"
     entrevistador.vaga_de_emprego = vaga_de_empregos(:uma_vaga)
 
-    assert_not entrevistador.save, "criacao de entrevistador sem nome"
+    assert_not entrevistador.save, "Entrevistador nao pode ser criado sem nome"
   end
 
   test "criacao de entrevistador sem email" do
@@ -28,6 +28,6 @@ class EntrevistadorTest < ActiveSupport::TestCase
     entrevistador.telefone = "87-99999-6969"
     entrevistador.vaga_de_emprego = vaga_de_empregos(:uma_vaga)
 
-    assert_not entrevistador.save, "criacao de entrevistador sem email"
+    assert_not entrevistador.save, "Entrevistador nao pode ser criado sem email"
   end
 end
