@@ -22,7 +22,7 @@ class CurriculoTest < ActiveSupport::TestCase
     curriculo.habilidades = "Conhecimentos em Ruby on Rails, JavaScript, HTML e CSS."
     curriculo.candidato_id = 1
 
-    assert_not curriculo.save, "Curriculo criado sem objetivo."
+    assert_not curriculo.save, "Curriculo nao pode ser criado sem objetivo."
   end
 
   test "curriculo criado sem nome" do
@@ -34,6 +34,6 @@ class CurriculoTest < ActiveSupport::TestCase
     curriculo.habilidades = "Conhecimentos em Ruby on Rails, JavaScript, HTML e CSS."
     curriculo.candidato_id = 1
 
-    assert_not curriculo.save, "Curriculo criado sem nome."
+    assert_not curriculo.save, "Curriculo nao pode ser criado sem nome."
   end
 end
