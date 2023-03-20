@@ -25,6 +25,7 @@ Feature: Candidato
     #DELETAR CADASTRO
   Scenario: Excluir candidato com sucesso
     Given que o candidato de nome: "Victor Santos", email: "victor@gmail.com", cpf: "11111111176", dataNascimento: "21-01-2001", telefone: "87-99999-6666" existe
+    And o curriculo de nome: "Joao", objetivo:"Trabalhar na área administrativa", experiencia_profissional:"10 anso na área", formacao_academica:"Administração", habilidades:"inglês fluente" existe
     When estou na pagina de candidatos
     And visito o candidato desejado
     And eu clico no botão de deletar candidato
@@ -33,6 +34,7 @@ Feature: Candidato
     #EDITAR CADASTRO
   Scenario: Editar candidato com sucesso
     Given que o candidato de nome: "Victor Santos", email: "victor@gmail.com", cpf: "11111111176", dataNascimento: "21-01-2001", telefone: "87-99999-6666" existe
+    And o curriculo de nome: "Joao", objetivo:"Trabalhar na área administrativa", experiencia_profissional:"10 anso na área", formacao_academica:"Administração", habilidades:"inglês fluente" existe
     When estou na pagina de candidatos
     And visito o candidato desejado
     And eu clico no link de editar candidato
