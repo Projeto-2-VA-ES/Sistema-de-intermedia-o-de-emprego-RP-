@@ -34,3 +34,10 @@ Then(/^eu vejo a mensagem curriculo editado com sucesso$/) do
   page.has_content?('Curriculo was successfully updated.')
 end
 
+And(/^eu clico em deletar$/) do
+  click_button 'Destroy this curriculo'
+end
+
+Then(/^eu vejo a mensagem curriculo deletado com sucesso$/) do
+  page.has_content?('Curriculo was successfully destroyed.')
+end
