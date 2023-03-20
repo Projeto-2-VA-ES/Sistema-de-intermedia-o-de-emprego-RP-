@@ -1,0 +1,32 @@
+<div class="container-fluid text-center">
+  <h2>Nova candidatura</h2>
+  <p>Candidato: <%= @candidato.nome %> </p>
+</div>
+
+
+<div>
+  <%= form_with model: [@candidato, @candidato.candidaturas.build] do |form| %>
+      <div >
+        <%= form.label :mensagem, style: "display: block" %>
+        <%= form.text_area :mensagem %>
+      </div>
+
+
+
+
+    <div>
+      <%= form.label :vaga_de_emprego_id%>
+      <%= form.collection_select(:vaga_de_emprego_id, VagaDeEmprego.all, :id, :titulo,{:selected => @candidatura.vaga_de_empregos_id})%>
+    </div>
+
+    <div class="actions">
+      <%= form.submit  %>
+    </div>
+
+    <%= link_to "Back to paciente", candidato_path(@candidato) %>
+  <% end %>
+
+
+  
+
+</div>

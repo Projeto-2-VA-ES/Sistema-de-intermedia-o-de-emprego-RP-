@@ -15,7 +15,8 @@
 
   <%= link_to 'Currículo',  curriculos_path %> |
   <%= link_to 'Vagas Disponíveis',  vaga_de_empregos_path %> |
-  <%= link_to 'Nova candidatura', new_candidatura_path(candidato_id: @candidato.id) %>
+  <%= link_to "Candidatura", "/candidatos/#{@candidato.id}/nova-candidatura"%>
+
 
 
 

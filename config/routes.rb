@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  resources :candidaturas
+
+  get '/candidatos/:id/nova-candidatura', to:  'candidatos#newCandidatura'
+
+
   resources :curriculos
   resources :entrevistadors
-  resources :candidatos
+  resources :candidatos do
+    resources :candidaturas
+  end
   resources :empregadors do
     resources :vaga_de_empregos
   end
