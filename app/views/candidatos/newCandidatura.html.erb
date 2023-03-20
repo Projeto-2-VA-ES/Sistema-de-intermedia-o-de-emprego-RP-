@@ -16,7 +16,7 @@
 
     <div>
       <%= form.label :vaga_de_emprego_id%>
-      <%= form.collection_select(:vaga_de_emprego_id, VagaDeEmprego.all, :id, :titulo,{:selected => @candidatura.vaga_de_empregos_id})%>
+      <%= form.collection_select(:vaga_de_empregos_id, VagaDeEmprego.all, :id, :titulo,{:selected => @candidatura.vaga_de_empregos_id})%>
     </div>
 
     <div class="actions">
