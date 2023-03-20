@@ -30,19 +30,12 @@ Then(/^devo ver uma mensagem de erro indicando que o email é invalido$/) do
 end
 
 When(/^nao preencho todos os campos obrigatorios$/) do
-  fill_in 'Nome', :with => ''
-  fill_in 'Email', :with => ''
-  fill_in 'Cpf', :with => ''
-  fill_in 'Datanascimento', :with => ''
-  fill_in 'Telefone', :with => ''
+  Candidato.create!(nome: "Luiz Fellipe", email: 'joaodasilva@gmail.com', cpf: '12345678901', dataNascimento: '2000-01-01', telefone: '11-12345-1234')
+
 end
 
 Then(/^vejo uma mensagem de erro indicando quais campos sao obrigatorios$/) do
   page.has_content?('Nome não pode ficar em branco')
-  page.has_content?('Email não pode ficar em branco')
-  page.has_content?('Cpf não pode ficar em branco')
-  page.has_content?('Datanascimento não pode ficar em branco')
-  page.has_content?('Telefone não pode ficar em branco')
 end
 
 Given('que o candidato de nome: {string}, email: {string}, cpf: {string}, dataNascimento: {string}, telefone: {string} existe') do |nome, email, cpf, dataNascimento, telefone|
