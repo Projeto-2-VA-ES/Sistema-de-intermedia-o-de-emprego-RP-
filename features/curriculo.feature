@@ -15,12 +15,13 @@ Feature: gerenciar curriculo
       And clico em Salvar Candidato
       Then devo ver uma mensagem de erro indicando que o email é invalido
 
-    #Scenario: cadastrar curriculo com dados validos e invalidos
-    #  Given eu estou na pagina de cadastro de curriculo
-    #  When eu preencho o formulario de cadastro de curriculo com dados validos e invalidos
-    #  And eu clico em "cadastrar"
-    #  Then eu vejo a mensagem "erro ao cadastrar curriculo"
-    #  And eu vejo o formulario de cadastro de curriculo preenchido com os dados validos e invalidos
+    Scenario: cadastrar curriculo com dados validos e invalidos
+        Given que estou na pagina de cadastro de candidato
+        When preencho o campo de email com um valor invalido
+        And  eu preencho os campos obrigatorios com informacoes validas
+        And clico em Salvar Candidato
+        Then devo ver uma mensagem de erro indicando que o email é invalido e que o curriculo nao foi cadastrado
+
 
     Scenario: editar curriculo
       Given que o candidato de nome: "Victor Santos", email: "victor@gmail.com", cpf: "11111111176", dataNascimento: "21-01-2001", telefone: "87-99999-6666" existe
