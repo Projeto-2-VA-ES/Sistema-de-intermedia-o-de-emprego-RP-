@@ -12,10 +12,8 @@ class CandidaturasController < ApplicationController
 
   # GET /candidaturas/new
   def new
-    @candidato = Candidato.find(params[:candidato_id])
-    @candidatura = @candidato.candidaturas.build
+    @candidatura = Candidatura.new
   end
-
 
   # GET /candidaturas/1/edit
   def edit
@@ -23,12 +21,16 @@ class CandidaturasController < ApplicationController
 
   # POST /candidaturas or /candidaturas.json
   def create
-    @candidato = Candidato.find(params[:candidato_id])
-    @candidatura = @candidato.candidaturas.build(candidatura_params)
-    if @candidatura.save
-      redirect_to @candidato, notice: "Candidatura was successfully created."
-    else
-      render :new
+    @candidatura = Candidatura.new(candidatura_params)
+
+    respond_to do |format|
+      if @candidatura.save
+        format.html { redirect_to candidatura_url(@candidatura), notice: "Candidatura was successfully created." }
+        format.json { render :show, status: :created, location: @candidatura }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @candidatura.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -56,22 +58,13 @@ class CandidaturasController < ApplicationController
   end
 
   private
-
-  def set_candidato
-    @candidato = Paciente.find(params[:id])
-    @curriculo = Curriculo.find_by_candidato_id(@candidato.id)
+  # Use callbacks to share common setup or constraints between actions.
+  def set_candidatura
+    @candidatura = Candidatura.find(params[:id])
   end
 
-
-
-
-    # Use callbacks to share common setup or constraints between actions.
-    def set_candidatura
-      @curriculo = Curriculo.find(params[:id])
-    end
-
-    # Only allow a list of trusted parameters through.
-    def candidatura_params
-      params.require(:candidatura).permit(:mensagem,:vaga_de_empregos_id)
-    end
+  # Only allow a list of trusted parameters through.
+  def candidatura_params
+    params.require(:candidatura).permit(:mensagem, :candidato_id, :vaga_de_empregos_id)
+  end
 end
