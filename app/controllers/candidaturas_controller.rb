@@ -22,8 +22,6 @@ class CandidaturasController < ApplicationController
   # POST /candidaturas or /candidaturas.json
   def create
     @candidatura = Candidatura.new(candidatura_params)
-    @candidatura = VagaDeEmprego.find_or_create_by(id: params[:candidatura][:vaga_de_empregos_id])
-    @candidatura = Candidato.find_or_create_by(id: params[:candidatura][:candidato_id])
 
     respond_to do |format|
       if @candidatura.save
@@ -68,6 +66,6 @@ class CandidaturasController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def candidatura_params
-    params.require(:candidatura).permit(:mensagem, :candidato_id, :vaga_de_empregos_id)
+    params.require(:candidatura).permit(:mensagem, :candidato_id, :vaga_de_emprego_id)
   end
 end

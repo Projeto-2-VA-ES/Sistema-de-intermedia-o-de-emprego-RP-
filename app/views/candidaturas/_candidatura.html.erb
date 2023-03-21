@@ -6,12 +6,14 @@
 
   <p>
     <strong>Candidato:</strong>
-    <%= candidatura.candidato_id %>
+    <%candidato = Candidato.find(candidatura.candidato_id) %>
+    <%= candidato.nome%>
   </p>
 
   <p>
     <strong>Vaga de empregos:</strong>
-    <%= candidatura.vaga_de_empregos_id %>
+    <%vaga = VagaDeEmprego.find(candidatura.vaga_de_emprego_id) %>
+    <%= vaga.titulo%>
   </p>
 
 </div>
