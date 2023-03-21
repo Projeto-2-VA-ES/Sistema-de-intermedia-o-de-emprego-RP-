@@ -53,3 +53,7 @@ end
 When(/^eu preencho os campos obrigatorios de candidato e curriculo com informacoes validas e invalidas$/) do
   Candidato.create!(nome: "Joao", email: 'joa13@gmail.com', cpf: '13345678972', dataNascimento: '2000-01-01', telefone: '11-12345-1234')
 end
+
+When(/^estou na pagina de curriculos$/) do
+  visit '/curriculos'
+end
