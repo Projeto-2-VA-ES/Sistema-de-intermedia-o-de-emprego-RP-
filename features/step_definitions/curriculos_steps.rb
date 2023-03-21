@@ -51,3 +51,8 @@ When(/^eu preencho os campos obrigatorios de candidato e curriculo com informaco
   Candidato.create!(nome: "Joao", email: 'joa@gmail.com', cpf: '12345678972', dataNascimento: '2000-01-01', telefone: '11-12345-1234')
   Curriculo.create!(nome: "Joao", objetivo:'Trabalhar na área administrativa',experiencia_profissional:'10 anso na área',formacao_academica:'Administração',habilidades:'inglês fluente',candidato_id:1)
 end
+
+And(/^eu preencho os campos obrigatorios de candidato e curriculo com informacoes validas e invalidas$/) do
+  Candidato.create!(nome: "Joao", email: 'joa@.com', cpf: '5678972', dataNascimento: '2000-01-01', telefone: '11123451234')
+  Curriculo.create!(nome: "Joao", objetivo:'Trabalhar na área administrativa',experiencia_profissional:'10 anso na área',formacao_academica:'Administração',habilidades:'inglês fluente',candidato_id:1)
+end
