@@ -2,13 +2,9 @@ And('o curriculo de nome: {string}, objetivo:{string}, experiencia_profissional:
   Curriculo.create!(nome: nome, objetivo: objetivo, experiencia_profissional: experiencia_profissional, formacao_academica: formacao_academica, habilidades: habilidades, candidato_id: 1)
 end
 
-And(/^eu clico no link Curriculo$/) do
-  visit '/candidatos'
-  click_link 'Currículo'
-end
-
 And(/^eu clico no link Para mostrar o curriculo$/) do
-  click_link 'Show this curriculo'
+  curriculo = Curriculo.last
+  visit curriculo_path(curriculo)
 end
 
 And(/^eu clico no link Editar$/) do

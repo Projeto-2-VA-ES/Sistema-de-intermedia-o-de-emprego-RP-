@@ -33,7 +33,7 @@ Feature: Candidato
 
     #EDITAR CADASTRO
   Scenario: Editar candidato com sucesso
-    Given que o candidato de nome: "Victor Santos", email: "victor@gmail.com", cpf: "11111111176", dataNascimento: "21-01-2001", telefone: "87-99999-6666" existe
+    Given que o candidato de nome: "Victor Santos", email: "victor53@gmail.com", cpf: "12111111176", dataNascimento: "21-01-2001", telefone: "87-99999-6666" existe
     And o curriculo de nome: "Joao", objetivo:"Trabalhar na área administrativa", experiencia_profissional:"10 anso na área", formacao_academica:"Administração", habilidades:"inglês fluente" existe
     When estou na pagina de candidatos
     And visito o candidato desejado
