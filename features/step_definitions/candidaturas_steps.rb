@@ -41,3 +41,37 @@ end
 Then('aparece uma mensagem de confirmação na tela que a candidatura foi criada') do
   page.has_content?('Candidatura was successfully created.')
 end
+
+
+#deletar uma candidatura
+
+Given('que existe uma candidatura para a vaga {string} feita pelo candidato {string}') do |titulo_vaga, nome_candidato|
+  # Cria o candidato
+
+  candidato = Candidato.create!(nome: nome_candidato, email: 'email@example.com', cpf: '12345678901', dataNascimento: Date.today, telefone: '87-99955-6622')
+
+
+  @empregador = Empregador.create!(nome: "Paulo", nomeEmpresa: "Empresa ABC", email: "paulo@example.com", endereco: "Rua A", telefone: "87-95562-9995", cnpj: "44.935.624/0001-75")
+
+  # Cria a vaga de emprego
+  vaga_de_emprego = VagaDeEmprego.create!(titulo: titulo_vaga, descricao: 'descricao da vaga de emprego', salario: 1000, empregador: @empregador)
+
+
+  # Cria a candidatura
+  @candidatura = Candidatura.create!(mensagem: "Tenho interesse na vaga de #{titulo_vaga}", candidato_id: candidato.id, vaga_de_emprego_id: vaga_de_emprego.id)
+
+end
+
+When('acesso a página de listagem de candidaturas') do
+  visit candidaturas_path
+end
+
+And('clico no botão para deletar a candidatura') do
+  candidatura = Candidatura.first
+  visit(candidatura_path(candidatura))
+  click_button("Destroy this candidatura")
+end
+
+Then('aparece uma mensagem de confirmação na tela que a candidatura foi deletada') do
+  page.has_content?('Candidatura was successfully destroyed.')
+end

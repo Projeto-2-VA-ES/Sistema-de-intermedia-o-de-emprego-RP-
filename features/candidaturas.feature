@@ -13,3 +13,10 @@ Feature: gerenciar uma candidatura
     And preencho minha mensagem de candidatura com "Tenho experiencia com ruby on rails" e seleciono a vaga desejada
     And clica no botão para criar a candidatura
     Then aparece uma mensagem de confirmação na tela que a candidatura foi criada
+
+
+  Scenario: Deletar uma candidatura
+    Given que existe uma candidatura para a vaga "Dev junior ruby on rails" feita pelo candidato "João"
+    When acesso a página de listagem de candidaturas
+    And clico no botão para deletar a candidatura
+    Then aparece uma mensagem de confirmação na tela que a candidatura foi deletada
