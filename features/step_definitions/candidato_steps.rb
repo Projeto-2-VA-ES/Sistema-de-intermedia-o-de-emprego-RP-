@@ -30,7 +30,7 @@ Then(/^devo ver uma mensagem de erro indicando que o email é invalido$/) do
 end
 
 When(/^nao preencho todos os campos obrigatorios$/) do
-  Candidato.create!(nome: "Luiz Fellipe", email: 'joaodasilva@gmail.com', cpf: '12345678901', dataNascimento: '2000-01-01', telefone: '11-12345-1234')
+  Candidato.create!(nome: "Luiz Fellipe", email: 'lusilva@gmail.com', cpf: '12346978901', dataNascimento: '2000-01-01', telefone: '11-12345-1234')
 
 end
 
