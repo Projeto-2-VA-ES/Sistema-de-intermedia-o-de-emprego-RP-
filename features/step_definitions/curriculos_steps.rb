@@ -4,8 +4,6 @@ end
 
 And(/^eu clico no link Curriculo$/) do
   visit '/candidatos'
-  candidato = Candidato.last
-  visit candidato_path(candidato)
   click_link 'Currículo'
 end
 
