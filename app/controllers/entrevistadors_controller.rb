@@ -65,6 +65,6 @@ class EntrevistadorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def entrevistador_params
-      params.require(:entrevistador).permit(:nome, :email, :telefone, :vaga_de_empregos_id)
+      params.require(:entrevistador).permit(:nome, :email, :telefone, :vaga_de_emprego_id)
     end
 end
