@@ -4,7 +4,7 @@ class CreateEntrevistadors < ActiveRecord::Migration[7.0]
       t.string :nome
       t.string :email
       t.string :telefone
-      t.references :vaga_de_empregos, null: false, foreign_key: true
+      t.references :vaga_de_emprego, null: false, foreign_key: true
 
       t.timestamps
     end

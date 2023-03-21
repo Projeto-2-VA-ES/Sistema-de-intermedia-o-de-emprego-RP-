@@ -16,7 +16,8 @@
 
   <p>
     <strong>Vaga de empregos:</strong>
-    <%= entrevistador.vaga_de_empregos_id %>
+    <%vaga = VagaDeEmprego.find(entrevistador.vaga_de_emprego_id) %>
+    <%= vaga.titulo%>
   </p>
 
 </div>
