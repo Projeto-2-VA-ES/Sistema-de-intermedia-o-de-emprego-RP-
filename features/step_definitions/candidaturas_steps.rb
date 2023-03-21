@@ -53,10 +53,10 @@ end
 Given('que existe uma candidatura para a vaga {string} feita pelo candidato {string}') do |titulo_vaga, nome_candidato|
   # Cria o candidato
 
-  candidato = Candidato.create!(nome: nome_candidato, email: 'email@example.com', cpf: '12345678911', dataNascimento: Date.today, telefone: '87-99955-6622')
+  candidato = Candidato.create!(nome: nome_candidato, email: 'jemail@example.com', cpf: '06345678911', dataNascimento: Date.today, telefone: '87-99955-6622')
 
 
-  @empregador = Empregador.create!(nome: "Paulo", nomeEmpresa: "Empresa ABC", email: "paulo01@example.com", endereco: "Rua A", telefone: "87-95562-9995", cnpj: "44.935.624/0001-75")
+  @empregador = Empregador.create!(nome: "Paulo", nomeEmpresa: "Empresa ABC", email: "paulo50@example.com", endereco: "Rua A", telefone: "87-95562-9995", cnpj: "44.935.624/0001-40")
 
   # Cria a vaga de emprego
   vaga_de_emprego = VagaDeEmprego.create!(titulo: titulo_vaga, descricao: 'descricao da vaga de emprego', salario: 1000, empregador: @empregador)
