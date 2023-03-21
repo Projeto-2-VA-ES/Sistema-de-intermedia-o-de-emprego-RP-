@@ -1,5 +1,5 @@
-#Criar vaga com sucesso
-Given('O empregador de nomeEmpresa: {string}, nome: {string}, endereco: {string}, email: {string}, cnpj: {string}, telefone: {string} existe') do |nomeEmpresa, nome, endereco, email, cnpj, telefone|
+=begin
+  Given('O empregador de nomeEmpresa: {string}, nome: {string}, endereco: {string}, email: {string}, cnpj: {string}, telefone: {string} existe') do |nomeEmpresa, nome, endereco, email, cnpj, telefone|
   visit '/empregadors/new'
   fill_in 'Nomeempresa', with: nomeEmpresa
   fill_in 'Nome', with: nome
@@ -38,7 +38,7 @@ end
 Then(/^eu vejo uma mensagem que informa que a vaga nao pode ser cadastrada com esse titulo$/) do
   page.has_content?("Título não pode ficar em branco")
 end
-=begin
+
 # Editar vaga
 Given("a vaga de titulo: {string}, descricao: {string}, salario: {string} existe") do |titulo, descricao, salario|
   visit '/vaga_de_empregos/new'
