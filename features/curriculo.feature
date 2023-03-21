@@ -24,7 +24,7 @@ Feature: gerenciar curriculo
 
 
     Scenario: editar curriculo
-      Given que o candidato de nome: "Victor Santos", email: "victor@gmail.com", cpf: "11111111176", dataNascimento: "21-01-2001", telefone: "87-99999-6666" existe
+      Given que o candidato de nome: "Luiz Fellipe", email: "luiz@gmail.com", cpf: "06725779417", dataNascimento: "12-02-2002", telefone: "87-99208-9858" existe
       And o curriculo de nome: "Joao", objetivo:"Trabalhar na área administrativa", experiencia_profissional:"10 anso na área", formacao_academica:"Administração", habilidades:"inglês fluente" existe
       When estou na pagina de candidatos
       And eu clico no link Curriculo
@@ -35,7 +35,7 @@ Feature: gerenciar curriculo
       Then eu vejo a mensagem curriculo editado com sucesso
 
     Scenario: deletar curriculo
-      Given que o candidato de nome: "Victor Santos", email: "victor@gmail.com", cpf: "11111111176", dataNascimento: "21-01-2001", telefone: "87-99999-6666" existe
+      Given que o candidato de nome: "Luiz Fellipe", email: "luiz@gmail.com", cpf: "06725779417", dataNascimento: "12-02-2002", telefone: "87-99208-9858" existe
       And o curriculo de nome: "Joao", objetivo:"Trabalhar na área administrativa", experiencia_profissional:"10 anso na área", formacao_academica:"Administração", habilidades:"inglês fluente" existe
       When estou na pagina de candidatos
       And eu clico no link Curriculo
