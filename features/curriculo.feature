@@ -17,8 +17,7 @@ Feature: gerenciar curriculo
 
     Scenario: cadastrar curriculo com dados validos e invalidos
         Given que estou na pagina de cadastro de candidato
-        When preencho o campo de email com um valor invalido
-        And  eu preencho os campos obrigatorios de candidato e curriculo com informacoes validas e invalidas
+        When eu preencho os campos obrigatorios de candidato e curriculo com informacoes validas e invalidas
         And clico em Salvar Candidato
         Then devo ver uma mensagem de erro indicando que o email é invalido e que o curriculo nao foi cadastrado
 
