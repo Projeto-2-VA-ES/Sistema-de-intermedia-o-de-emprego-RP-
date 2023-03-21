@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     resources :vaga_de_empregos
   end
   resources :vaga_de_empregos
-
   resources :vaga_de_empregos do
     collection do
       get 'disponiveis'
