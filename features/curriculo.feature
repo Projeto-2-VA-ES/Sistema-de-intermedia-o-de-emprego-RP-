@@ -5,7 +5,7 @@ Feature: gerenciar curriculo
 
     Scenario: cadastrar curriculo
       Given que eu estou na pagina de cadastro de candidato
-      When eu preencho os campos obrigatorios com informacoes validas
+      When eu preencho os campos obrigatorios de candidato e curriculo com informacoes validas
       And clico em Salvar Candidato
       Then devo ver uma mensagem de confirmacao
 

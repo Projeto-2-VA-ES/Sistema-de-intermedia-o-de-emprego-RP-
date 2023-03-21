@@ -46,3 +46,8 @@ Then(/^devo ver uma mensagem de erro indicando que o email é invalido e que o c
   page.has_content?('Email is invalid')
   page.has_content?('Curriculo was not created')
 end
+
+When(/^eu preencho os campos obrigatorios de candidato e curriculo com informacoes validas$/) do
+  Candidato.create!(nome: "Joao", email: 'joaodasilva@gmail.com', cpf: '12345678901', dataNascimento: '2000-01-01', telefone: '11-12345-1234')
+  Curriculo.create!(nome: "Joao", objetivo:'Trabalhar na área administrativa',experiencia_profissional:'10 anso na área',formacao_academica:'Administração',habilidades:'inglês fluente',candidato_id:1)
+end
