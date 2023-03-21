@@ -4,7 +4,7 @@ Given('que existe um candidato chamado {string} com e-mail {string} com o cpf {s
   @candidato = Candidato.create!(nome: nome, email: email, cpf: cpf, dataNascimento: Date.parse(data_nascimento), telefone: numero_telefone)
 end
 
-And('que existe um empregador chamdo {string} com a empresa {string} com o email {string} com o endereco {string} com o telefone {string} e com o cnpj {string}') do |nome, empresa, email, endereco, telefone, cnpj|
+And('que existe um empregador chamado {string} com a empresa {string} com o email {string} com o endereco {string} com o telefone {string} e com o cnpj {string}') do |nome, empresa, email, endereco, telefone, cnpj|
   @empregador = Empregador.create!(nome: nome, nomeEmpresa: empresa, email: email, endereco: endereco, telefone: telefone, cnpj: cnpj)
 end
 
@@ -12,7 +12,7 @@ And('criou a seguinte vaga de emprego: Titulo: {string}, Descricao: {string} e S
   @vaga_de_emprego = VagaDeEmprego.create!(titulo: titulo, descricao: descricao, salario: salario, empregador: @empregador)
 end
 
-When('acesso a página de candidatura da vaga de emprego') do
+When('acesso a pagina de candidatura da vaga de emprego') do
   visit new_candidatura_path(@candidatura)
 end
 
@@ -34,12 +34,17 @@ And('preencho minha mensagem de candidatura com {string} e seleciono a vaga dese
 
 end
 
-And('clica no botão para criar a candidatura') do
+And('clica no botao para criar a candidatura') do
   click_button "Create Candidatura"
 end
 
-Then('aparece uma mensagem de confirmação na tela que a candidatura foi criada') do
-  page.has_content?('Candidatura was successfully created.')
+Then('aparece uma mensagem de confirmacao na tela que a candidatura foi criada') do
+  page.has_content?('Failed to create Candidatura.')
+end
+
+#criar candidatura com informacoes invalidas
+Then('aparece uma mensagem de confirmacao na tela que a candidatura nao pode ser criada com a mensagem em branco') do
+  page.has_content?('')
 end
 
 
@@ -62,16 +67,38 @@ Given('que existe uma candidatura para a vaga {string} feita pelo candidato {str
 
 end
 
-When('acesso a página de listagem de candidaturas') do
+When('acesso a pagina de listagem de candidaturas') do
   visit candidaturas_path
 end
 
-And('clico no botão para deletar a candidatura') do
+And('clico no botao para deletar a candidatura') do
   candidatura = Candidatura.first
   visit(candidatura_path(candidatura))
   click_button("Destroy this candidatura")
 end
 
-Then('aparece uma mensagem de confirmação na tela que a candidatura foi deletada') do
+Then('aparece uma mensagem de confirmacao na tela que a candidatura foi deletada') do
   page.has_content?('Candidatura was successfully destroyed.')
+end
+
+#Editar uma candidatura
+
+And('a mensagem de candidatura e {string}') do |mensagem_candidatura|
+  @candidatura.update!(mensagem: mensagem_candidatura)
+end
+
+When('acesso a pagina de edicao de candidaturas') do
+  visit edit_candidatura_path(@candidatura)
+end
+
+And('altero a mensagem de candidatura para {string}') do |nova_mensagem|
+  fill_in 'candidatura[mensagem]', with: nova_mensagem
+end
+
+And('clico no botao para salvar a edicao') do
+  click_button 'Update Candidatura'
+end
+
+Then('aparece uma mensagem de confirmacao na tela que a candidatura foi editada com sucesso') do
+  page.has_content?('Candidatura was successfully updated.')
 end
