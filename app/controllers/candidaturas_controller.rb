@@ -22,10 +22,12 @@ class CandidaturasController < ApplicationController
   # POST /candidaturas or /candidaturas.json
   def create
     @candidatura = Candidatura.new(candidatura_params)
+    @candidatura = VagaDeEmprego.find_or_create_by(id: params[:candidatura][:vaga_de_empregos_id])
+    @candidatura = Candidato.find_or_create_by(id: params[:candidatura][:candidato_id])
 
     respond_to do |format|
       if @candidatura.save
-        format.html { redirect_to candidatura_url(@candidatura), notice: "Candidatura was successfully created." }
+        format.html { redirect_to @candidatura, notice: "Candidatura was successfully created." }
         format.json { render :show, status: :created, location: @candidatura }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -33,6 +35,7 @@ class CandidaturasController < ApplicationController
       end
     end
   end
+
 
   # PATCH/PUT /candidaturas/1 or /candidaturas/1.json
   def update
