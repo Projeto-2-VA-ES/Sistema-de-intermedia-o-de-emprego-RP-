@@ -2,15 +2,9 @@ And('o curriculo de nome: {string}, objetivo:{string}, experiencia_profissional:
   Curriculo.create!(nome: nome, objetivo: objetivo, experiencia_profissional: experiencia_profissional, formacao_academica: formacao_academica, habilidades: habilidades, candidato_id: 1)
 end
 
-And(/^eu clico no link Curriculo$/) do
-  visit '/candidatos'
-  candidato = Candidato.last
-  visit candidato_path(candidato)
-  click_link 'Currículo'
-end
-
 And(/^eu clico no link Para mostrar o curriculo$/) do
-  click_link 'Show this curriculo'
+  curriculo = Curriculo.last
+  visit curriculo_path(curriculo)
 end
 
 And(/^eu clico no link Editar$/) do
@@ -45,4 +39,17 @@ end
 Then(/^devo ver uma mensagem de erro indicando que o email é invalido e que o curriculo nao foi cadastrado$/) do
   page.has_content?('Email is invalid')
   page.has_content?('Curriculo was not created')
+end
+
+When(/^eu preencho os campos obrigatorios de candidato e curriculo com informacoes validas$/) do
+  Candidato.create!(nome: "Joao", email: 'joa@gmail.com', cpf: '12345678972', dataNascimento: '2000-01-01', telefone: '11-12345-1234')
+  Curriculo.create!(nome: "Joao", objetivo:'Trabalhar na área administrativa',experiencia_profissional:'10 anso na área',formacao_academica:'Administração',habilidades:'inglês fluente',candidato_id:1)
+end
+
+When(/^eu preencho os campos obrigatorios de candidato e curriculo com informacoes validas e invalidas$/) do
+  Candidato.create!(nome: "Joao", email: 'joa13@gmail.com', cpf: '13345678972', dataNascimento: '2000-01-01', telefone: '11-12345-1234')
+end
+
+When(/^estou na pagina de curriculos$/) do
+  visit '/curriculos'
 end
