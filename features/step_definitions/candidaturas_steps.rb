@@ -18,7 +18,7 @@ end
 
 And('preencho minha mensagem de candidatura com {string} e seleciono a vaga desejada') do |mensagem|
   # Recupera o candidato criado anteriormente
-  candidato = Candidato.find_by(nome: "João")
+  candidato = Candidato.find_by(nome: "Joao")
 
   # Recupera a vaga de emprego criada anteriormente
   vaga = VagaDeEmprego.find_by(titulo: "Dev junior ruby on rails")
