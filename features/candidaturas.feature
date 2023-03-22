@@ -22,7 +22,7 @@ Feature: gerenciar uma candidatura
     Then aparece uma mensagem de confirmacao na tela que a candidatura nao pode ser criada com a mensagem em branco
 
   Scenario: Criar uma candidatura com informacoes invalidas
-    Given que existe um candidato chamado "josephe" com e-mail "joaov@outlookcom" com o cpf "06848786427" com a data "20/11/2001" e com o seguinte numero "87-98946-9995"
+    Given que existe um candidato chamado "josephe" com e-mail "josephee@outlookcom" com o cpf "06848786427" com a data "20/11/2001" e com o seguinte numero "87-98946-9995"
     And  que existe um empregador chamado "josephi" com a empresa "Empresa ABC" com o email "josephi@example.com" com o endereco "Rua ponte" com o telefone "87-99945-9896" e com o cnpj "44.955.624/0001-54"
     And  criou a seguinte vaga de emprego: Titulo: "Dev junior ruby", Descricao: "Candidato triste" e Salario: "5800"
     When  acesso a pagina de candidatura da vaga de emprego
