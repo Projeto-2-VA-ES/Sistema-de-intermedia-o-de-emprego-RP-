@@ -47,7 +47,7 @@ When('clico no botao para salvar o entrevistador') do
   click_button 'Salvar'
 end
 
-Then('eu vejo uma mensagem de erro informando que o campo obrigatório faltante deve ser preenchido') do
+Then('eu vejo uma mensagem de erro informando que o campo obrigatorio faltante deve ser preenchido') do
   expect(page).to have_content('não pode ficar em branco')
 end
 
