@@ -6,6 +6,7 @@ end
 
 And('que existe um empregador chamado {string} com a empresa {string} com o email {string} com o endereco {string} com o telefone {string} e com o cnpj {string}') do |nome, empresa, email, endereco, telefone, cnpj|
   @empregador = Empregador.create!(nome: nome, nomeEmpresa: empresa, email: email, endereco: endereco, telefone: telefone, cnpj: cnpj)
+
 end
 
 And('criou a seguinte vaga de emprego: Titulo: {string}, Descricao: {string} e Salario: {string}') do |titulo, descricao, salario|
@@ -16,12 +17,12 @@ When('acesso a pagina de candidatura da vaga de emprego') do
   visit new_candidatura_path(@candidatura)
 end
 
-And('preencho minha mensagem de candidatura com {string} e seleciono a vaga desejada para o candidato {string}') do |mensagem, nome|
+And('preencho minha mensagem de candidatura com {string} e seleciono a vaga desejada para o candidato {string} do seguinte titulo de vaga {string}') do |mensagem, nome, titulo|
   # Recupera o candidato criado anteriormente
   candidato = Candidato.find_by(nome: nome)
 
   # Recupera a vaga de emprego criada anteriormente
-  vaga = VagaDeEmprego.find_by(titulo: "Dev junior ruby on rails")
+  vaga = VagaDeEmprego.find_by(titulo: titulo)
 
   # Preenche a mensagem de candidatura
   fill_in "candidatura[mensagem]", with: mensagem
@@ -44,7 +45,7 @@ end
 
 #criar candidatura com informacoes invalidas
 Then('aparece uma mensagem de confirmacao na tela que a candidatura nao pode ser criada com a mensagem em branco') do
-  page.has_content?('')
+  page.has_content?('mensagem cant be blank')
 end
 
 
@@ -118,4 +119,24 @@ end
 
 Then('aparece uma mensagem de confirmacao na tela que a candidatura foi editada com sucesso') do
   page.has_content?('Candidatura was successfully updated.')
+end
+
+
+And('preencho minha mensagem de candidatura com {string} e seleciono  o seguinte titulo de vaga {string}')do |mensagem, titulo|
+
+
+  # Recupera a vaga de emprego criada anteriormente
+  vaga = VagaDeEmprego.find_by(titulo: titulo)
+
+  # Preenche a mensagem de candidatura
+  fill_in "candidatura[mensagem]", with: mensagem
+
+
+  # Seleciona a vaga de emprego desejada no drop down
+  select vaga.titulo, from: "candidatura[vaga_de_emprego_id]"
+
+end
+
+Then('aparece uma mensagem de confirmacao na tela que a candidatura nao pode ser criada sem um candidato')do
+  page.has_content?('candidato cant be blank')
 end
