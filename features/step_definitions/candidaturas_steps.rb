@@ -9,7 +9,7 @@ And('que existe um empregador chamado {string} com a empresa {string} com o emai
 end
 
 And('criou a seguinte vaga de emprego: Titulo: {string}, Descricao: {string} e Salario: {string}') do |titulo_vaga, descricao, salario|
-  VagaDeEmprego.create!(titulo_vaga: titulo, descricao: descricao, salario: salario, empregador: @empregador)
+  VagaDeEmprego.create!(titulo: titulo_vaga, descricao: descricao, salario: salario, empregador: @empregador)
 end
 
 When('acesso a pagina de candidatura da vaga de emprego') do
