@@ -83,7 +83,7 @@ end
 
 #Editar uma candidatura
 
-And('a mensagem de candidatura e {string}') do |mensagem_candidatura|
+And('a mensagem de candidatura eh {string}') do |mensagem_candidatura|
   @candidatura.update!(mensagem: mensagem_candidatura)
 end
 
