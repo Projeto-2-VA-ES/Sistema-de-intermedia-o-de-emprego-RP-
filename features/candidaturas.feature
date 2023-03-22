@@ -6,16 +6,16 @@ Feature: gerenciar uma candidatura
   :nome, :nomeEmpresa, :email, :endereco, :telefone, :cnpj
 
   Scenario: Criar uma candidatura
-    Given que existe um candidato chamado "João" com e-mail "joao@example.com" com o cpf "11498786427" com a data "20/11/2001" e com o seguinte numero "87-99946-9995"
-    And  que existe um empregador chamado "Paulo" com a empresa "Empresa ABC" com o email "paulo@example.com" com o endereco "Rua ponte" com o telefone "87-99945-9896" e com o cnpj "44.935.624/0001-76"
-    And  criou a seguinte vaga de emprego: Titulo: "Dev junior ruby on rails", Descricao: "Candidato confiante" e Salario: "2500"
+    Given que existe um candidato chamado "João" com e-mail "joao@hotmail.com" com o cpf "11598786427" com a data "20/11/2001" e com o seguinte numero "87-99946-9995"
+    And  que existe um empregador chamado "Paulo" com a empresa "Empresa ABC" com o email "paulo@example.com" com o endereco "Rua ponte" com o telefone "87-99945-9896" e com o cnpj "44.935.624/0001-60"
+    And  criou a seguinte vaga de emprego: Titulo: "Dev pleno ruby on rails", Descricao: "Candidato confiante" e Salario: "2500"
     When  acesso a pagina de candidatura da vaga de emprego
     And preencho minha mensagem de candidatura com "Tenho experiencia com ruby on rails" e seleciono a vaga desejada
     And clica no botao para criar a candidatura
     Then aparece uma mensagem de confirmacao na tela que a candidatura foi criada
 
   Scenario: Criar uma candidatura com informacoes invalidas
-    Given que existe um candidato chamado "João Victor" com e-mail "joaov@example.com" com o cpf "00498786427" com a data "20/11/2001" e com o seguinte numero "87-99946-9995"
+    Given que existe um candidato chamado "João Victor" com e-mail "joaov@outlookcom" com o cpf "06698786427" com a data "20/11/2001" e com o seguinte numero "87-99946-9995"
     And  que existe um empregador chamado "Paulo" com a empresa "Empresa ABC" com o email "paulo@example.com" com o endereco "Rua ponte" com o telefone "87-99945-9896" e com o cnpj "44.935.624/0001-54"
     And  criou a seguinte vaga de emprego: Titulo: "Dev junior ruby on rails", Descricao: "Candidato confiante" e Salario: "2500"
     When  acesso a pagina de candidatura da vaga de emprego
