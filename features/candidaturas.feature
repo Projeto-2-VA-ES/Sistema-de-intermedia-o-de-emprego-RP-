@@ -3,8 +3,6 @@ Feature: gerenciar uma candidatura
   I want to candidatar em uma vaga  no site de emprego
   So that eu possa  concorrer a uma vaga
 
-  :nome, :nomeEmpresa, :email, :endereco, :telefone, :cnpj
-
   Scenario: Criar uma candidatura
     Given que existe um candidato chamado "Joao" com e-mail "joao@hotmail.com" com o cpf "11598786427" com a data "20/11/2001" e com o seguinte numero "87-99946-9995"
     And  que existe um empregador chamado "Paulo" com a empresa "Empresa ABC" com o email "paulo@example.com" com o endereco "Rua ponte" com o telefone "87-99945-9896" e com o cnpj "44.935.624/0001-60"
