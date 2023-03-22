@@ -8,8 +8,8 @@ And('que existe um empregador chamado {string} com a empresa {string} com o emai
   @empregador = Empregador.create!(nome: nome, nomeEmpresa: empresa, email: email, endereco: endereco, telefone: telefone, cnpj: cnpj)
 end
 
-And('criou a seguinte vaga de emprego: Titulo: {string}, Descricao: {string} e Salario: {string}') do |titulo, descricao, salario|
-  @vaga_de_emprego = VagaDeEmprego.create!(titulo: titulo, descricao: descricao, salario: salario, empregador: @empregador)
+And('criou a seguinte vaga de emprego: Titulo: {string}, Descricao: {string} e Salario: {string}') do |titulo_vaga, descricao, salario|
+  VagaDeEmprego.create!(titulo_vaga: titulo, descricao: descricao, salario: salario, empregador: @empregador)
 end
 
 When('acesso a pagina de candidatura da vaga de emprego') do
@@ -82,6 +82,23 @@ Then('aparece uma mensagem de confirmacao na tela que a candidatura foi deletada
 end
 
 #Editar uma candidatura
+#
+Given('que existe uma candidatura para a vaga {string} feita pelo candidato {string} e empregador {string}')do |titulo_vaga, nome_candidato, nome_empregador|
+  # Cria o candidato
+
+  candidato = Candidato.create!(nome: nome_candidato, email: 'joao666@gmail.com', cpf: '66655545698', dataNascimento: Time.zone.today, telefone: '87-99955-6622')
+
+
+  @empregador = Empregador.create!(nome: nome_empregador, nomeEmpresa: "Empresa ABC", email: "paulo50@example.com", endereco: "Rua A", telefone: "87-95562-9995", cnpj: "44.935.624/0001-40")
+
+  # Cria a vaga de emprego
+  vaga_de_emprego = VagaDeEmprego.create!(titulo: titulo_vaga, descricao: 'descricao da vaga de emprego', salario: 1000, empregador: @empregador)
+
+
+  # Cria a candidatura
+  @candidatura = Candidatura.create!(mensagem: "Tenho interesse na vaga de #{titulo_vaga}", candidato_id: candidato.id, vaga_de_emprego_id: vaga_de_emprego.id)
+
+end
 
 And('a mensagem de candidatura eh {string}') do |mensagem_candidatura|
   @candidatura.update!(mensagem: mensagem_candidatura)
