@@ -23,24 +23,24 @@ Feature: Candidato
     Then vejo uma mensagem de erro indicando quais campos sao obrigatorios
 
     #DELETAR CADASTRO
-#  Scenario: Excluir candidato com sucesso
-#    Given que o candidato de nome: "Victor Santos", email: "victor@gmail.com", cpf: "11111111176", dataNascimento: "21-01-2001", telefone: "87-99999-6666" existe
-#    And o curriculo de nome: "Joao", objetivo:"Trabalhar na área administrativa", experiencia_profissional:"10 anso na área", formacao_academica:"Administração", habilidades:"inglês fluente" existe
-#    When estou na pagina de candidatos
-#    And visito o candidato desejado
-#    And eu clico no botão de deletar candidato
-#    Then eu vejo uma mensagem que informa que o candidato foi excluído com sucesso
+  Scenario: Excluir candidato com sucesso
+    Given que o candidato de nome: "Victor Santos", email: "victor@gmail.com", cpf: "11111111176", dataNascimento: "21-01-2001", telefone: "87-99999-6666" existe
+    And o curriculo de nome: "Joao", objetivo:"Trabalhar na área administrativa", experiencia_profissional:"10 anso na área", formacao_academica:"Administração", habilidades:"inglês fluente" existe
+    When estou na pagina de candidatos
+    And visito o candidato desejado
+    And eu clico no botão de deletar candidato
+    Then eu vejo uma mensagem que informa que o candidato foi excluído com sucesso
 
     #EDITAR CADASTRO
-#  Scenario: Editar candidato com sucesso
-#    Given que o candidato de nome: "Victor Santos", email: "victor53@gmail.com", cpf: "12111111176", dataNascimento: "21-01-2001", telefone: "87-99999-6666" existe
-#    And o curriculo de nome: "Joao", objetivo:"Trabalhar na área administrativa", experiencia_profissional:"10 anso na área", formacao_academica:"Administração", habilidades:"inglês fluente" existe
-#    When estou na pagina de candidatos
-#    And visito o candidato desejado
-#    And eu clico no link de editar candidato
-#    And preencho os campos que desejo atualizar com informacoes validas
-#    And clico em Atualizar Candidato
-#    Then devo ver uma mensagem de confirmacao da atualizacao
+  Scenario: Editar candidato com sucesso
+    Given que o candidato de nome: "Victor Santos", email: "victor53@gmail.com", cpf: "12111111176", dataNascimento: "21-01-2001", telefone: "87-99999-6666" existe
+    And o curriculo de nome: "Joao", objetivo:"Trabalhar na área administrativa", experiencia_profissional:"10 anso na área", formacao_academica:"Administração", habilidades:"inglês fluente" existe
+    When estou na pagina de candidatos
+    And visito o candidato desejado
+    And eu clico no link de editar candidato
+    And preencho os campos que desejo atualizar com informacoes validas
+    And clico em Atualizar Candidato
+    Then devo ver uma mensagem de confirmacao da atualizacao
 
 
 
