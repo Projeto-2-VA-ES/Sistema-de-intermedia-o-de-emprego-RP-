@@ -29,7 +29,7 @@ Feature: gerenciar uma candidatura
 
   Scenario: Editar uma candidatura
     Given que existe uma candidatura para a vaga "Dev senior ruby on rails" feita pelo candidato "Jose"
-    And a mensagem de candidatura e "Tenho experiencia com ruby on rails"
+    And a mensagem de candidatura eh "Tenho experiencia com ruby on rails"
     When acesso a pagina de edicao de candidaturas
     And altero a mensagem de candidatura para "Tenho mais de 2 anos de experiencia com ruby on rails"
     And clico no botao para salvar a edicao
