@@ -24,7 +24,7 @@ Feature: gerenciar uma candidatura
     Then aparece uma mensagem de confirmacao na tela que a candidatura nao pode ser criada com a mensagem em branco
 
   Scenario: Deletar uma candidatura
-    Given que existe uma candidatura para a vaga "Dev junior ruby on rails" feita pelo candidato "Joaquin"
+    Given que existe uma candidatura para a vaga "Dev junior ruby on rails" feita pelo candidato "Joaquin" e pelo empregador "Ze do tapico"
     When acesso a pagina de listagem de candidaturas
     And clico no botao para deletar a candidatura
     Then aparece uma mensagem de confirmacao na tela que a candidatura foi deletada

@@ -53,7 +53,7 @@ end
 Given('que existe uma candidatura para a vaga {string} feita pelo candidato {string}') do |titulo_vaga, nome_candidato|
   # Cria o candidato
 
-  candidato = Candidato.create!(nome: nome_candidato, email: 'joao666@gmail.com', cpf: '66655545698', dataNascimento: Date.today, telefone: '87-99955-6622')
+  candidato = Candidato.create!(nome: nome_candidato, email: 'joao666@gmail.com', cpf: '66655545698', dataNascimento: "20/11/2001", telefone: '87-99955-6622')
 
 
   @empregador = Empregador.create!(nome: "Paulo", nomeEmpresa: "Empresa ABC", email: "paulo50@example.com", endereco: "Rua A", telefone: "87-95562-9995", cnpj: "44.935.624/0001-40")
@@ -101,4 +101,23 @@ end
 
 Then('aparece uma mensagem de confirmacao na tela que a candidatura foi editada com sucesso') do
   page.has_content?('Candidatura was successfully updated.')
+end
+
+
+#Given de deletar candidato
+Given('que existe uma candidatura para a vaga {string} feita pelo candidato {string} e pelo empregador {string}')do |titulo_vaga, nome_candidato, nome_empregador, |
+  # Cria o candidato
+
+  candidato = Candidato.create!(nome: nome_candidato, email: 'jao@gmail.com', cpf: '64455545698', dataNascimento: Date.today, telefone: '87-99954-6622')
+
+
+  @empregador = Empregador.create!(nome: nome_empregador, nomeEmpresa: "Empresa ABC", email: "paulo50@example.com", endereco: "Rua A", telefone: "87-95562-9995", cnpj: "44.935.624/0001-30")
+
+  # Cria a vaga de emprego
+  vaga_de_emprego = VagaDeEmprego.create!(titulo: titulo_vaga, descricao: 'descricao da vaga de emprego', salario: 1000, empregador: @empregador)
+
+
+  # Cria a candidatura
+  @candidatura = Candidatura.create!(mensagem: "Tenho interesse na vaga de #{titulo_vaga}", candidato_id: candidato.id, vaga_de_emprego_id: vaga_de_emprego.id)
+
 end

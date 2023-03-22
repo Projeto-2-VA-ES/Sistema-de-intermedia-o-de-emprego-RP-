@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="20952a9b-1255-4a91-b91a-58ae4d6a3581" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/candidaturas.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/candidaturas.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/step_definitions/candidaturas_steps.rb" beforeDir="false" afterPath="$PROJECT_DIR$/features/step_definitions/candidaturas_steps.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,5 +268,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Sistema_de_intermediacao_o_de_emprego@Development__Sistema_de_intermediacao_o_de_emprego.rcov" NAME="Development: Sistema-de-intermediacao-o-de-emprego Coverage Results" MODIFIED="1679260800710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Sistema-de-intermediacao-o-de-emprego" />
+    <SUITE FILE_PATH="coverage/Sistema_de_intermediacao_de_emprego@Development__Sistema_de_intermediacao_o_de_emprego.rcov" NAME="Development: Sistema-de-intermediacao-o-de-emprego Coverage Results" MODIFIED="1679425230093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Sistema-de-intermediacao-o-de-emprego" />
   </component>
 </project>
