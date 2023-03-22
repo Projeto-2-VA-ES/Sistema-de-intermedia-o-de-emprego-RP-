@@ -1,6 +1,6 @@
 class VagaDeEmprego < ApplicationRecord
   belongs_to :empregador
-  has_many :candidaturas
+  has_many :candidaturas, :dependent => :destroy
   has_many :candidatos, through: :candidaturas
 
   validates :titulo, presence: true, length: { minimum: 5, maximum: 100 },
