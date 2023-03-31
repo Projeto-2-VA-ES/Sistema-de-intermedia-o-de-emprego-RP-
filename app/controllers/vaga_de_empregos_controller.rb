@@ -21,9 +21,17 @@ class VagaDeEmpregosController < ApplicationController
 
   # POST /vaga_de_empregos or /vaga_de_empregos.json
   def create
-    @empregador = Empregador.find(params[:empregador_id])
-    @vaga_de_emprego = @empregador.vaga_de_empregos.create(vaga_de_emprego_params)
-    redirect_to empregador_path(@empregador)
+    @vaga_de_emprego = VagaDeEmprego.new(vaga_de_emprego_params)
+
+    respond_to do |format|
+      if @vaga_de_emprego.save
+        format.html { redirect_to @vaga_de_emprego, notice: "Vaga de emprego foi criada com sucesso." }
+        format.json { render :show, status: :created, location: @vaga_de_emprego }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @vaga_de_emprego.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /vaga_de_empregos/1 or /vaga_de_empregos/1.json

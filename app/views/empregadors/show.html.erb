@@ -2,35 +2,10 @@
 
 <%= render @empregador %>
 
-<h2>Vagas de Emprego Criadas</h2>
-<%= render @empregador.vaga_de_empregos%>
-
-<h2>Crie Vagas de Emprego</h2>
-<%= form_with model: [ @empregador, VagaDeEmprego.new ] do |form| %>
-  <p>
-    <%= form.label :titulo %><br>
-    <%= form.text_field :titulo %>
-  </p>
-
-  <p>
-    <%= form.label :descricao %><br>
-    <%= form.text_area :descricao %>
-  </p>
-
-  <p>
-    <%= form.label :salario %><br>
-    <%= form.number_field :salario %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
-<%end %>
-
-
 <div>
   <%= link_to "Edit this empregador", edit_empregador_path(@empregador) %> |
-  <%= link_to "Back to empregadors", empregadors_path %>
+  <%= link_to "Back to empregadors", empregadors_path %> |
+  <%= link_to "Criar nova vaga de emprego", vaga_de_empregos_path %>
 
   <%= button_to "Destroy this empregador", @empregador, method: :delete %>
 </div>
