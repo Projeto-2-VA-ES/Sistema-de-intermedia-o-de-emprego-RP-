@@ -71,3 +71,56 @@ end
 Then(/^devo ver o nome do entrevistador e seus dados$/) do
   page.has_content?('Karlos')
 end
+
+
+
+
+
+#Deletar entrevistador
+
+# Given que existe um entrevistador com nome "Rian", email "rianwilker@gmail.com" e telefone "87-99946-9995" para a vaga de emprego "Dev Pleno ruby on rails"
+Given("que existe um entrevistador com nome {string}, email {string} e telefone {string} para a vaga de emprego {string}") do |nome, email, telefone, titulo_vaga|
+  @empregador = Empregador.create!(nome: "Pablo", nomeEmpresa: "Empresa ABCD", email: "Pablo@example.com", endereco: "Rua A", telefone: "87-95562-9995", cnpj: "44.935.624/0001-80")
+
+  # Cria a vaga de emprego
+  vaga_de_emprego = VagaDeEmprego.create!(titulo: titulo_vaga, descricao: 'descricao da vaga de emprego', salario: 1000, empregador: @empregador)
+
+  # Criar entrevistador
+  @entrevistador = Entrevistador.create!(nome: nome, email: email, telefone: telefone, vaga_de_emprego_id: vaga_de_emprego.id)
+end
+
+# When acesso a página de listagem de entrevistadores
+When("acesso a página de listagem de entrevistadores") do
+  visit entrevistadors_path
+end
+And("seleciono o entrevistador desejado") do
+  entrevistador = Entrevistador.first
+  visit(entrevistador_path(entrevistador))
+end
+
+# And clico no botão para excluir o entrevistador
+And("clico no botão para excluir o entrevistador") do
+  click_button "Destroy this entrevistador"
+end
+
+# Then aparece uma mensagem de confirmação na tela que o entrevistador foi excluído
+Then("aparece uma mensagem de confirmação na tela que o entrevistador foi excluído") do
+  page.has_content?("Entrevistador was successfully destroyed.")
+end
+
+#Editar Entrevistador
+#
+And('acesso a pagina de edicao de entrevistador')do
+  visit edit_entrevistador_path(@entrevistador)
+end
+And('altero o email do entrevistador selecionado para {string}') do |email|
+  fill_in "entrevistador[email]", with: email
+end
+
+And('clico no botao para editar o entrevistador') do
+  click_button "Update Entrevistador"
+end
+
+Then('aparece uma mensagem de confirmacao na tela que o entrevistador foi editado com sucesso') do
+  page.has_content?("Entrevistador was successfully updated.")
+end

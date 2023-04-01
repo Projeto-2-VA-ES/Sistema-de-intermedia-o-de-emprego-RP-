@@ -25,20 +25,17 @@ Feature: entrevistador
     And visito o entrevistador desejado
     Then devo ver o nome do entrevistador e seus dados
 
-  Scenario: editar um entrevistador
-    Given que existe um empregador chamado "Rebeca" dono da empresa "Empresa ACC" com o email "rebeca300@example.com" com o endereco "Rua W" com o telefone "89-99845-9896" e com o cnpj "44.935.624/0001-00"
-    And  tem a seguinte vaga de emprego: Titulo: "Dev junior ruby on rails", Descricao: "15 Anos de Experiência" e Salario: "3000"
-    When estou na pagina de entrevistador
-    And visito o entrevistador desejado
-    And eu clico no link de editar entrevistador
-    And preencho os campos que desejo atualizar com todos os dados validos
-    And clico em Atualizar entrevistador
-    Then devo ver uma mensagem de confirmacao da atualizacao do entrevistador
+  Scenario: Editar um entrevistador
+    Given que existe um entrevistador com nome "Rian", email "rianwilker@gmail.com" e telefone "87-99946-9995" para a vaga de emprego "Dev Pleno ruby on rails"
+    When seleciono o entrevistador desejado
+    And acesso a pagina de edicao de entrevistador
+    And altero o email do entrevistador selecionado para "rianw@gmail.com"
+    And clico no botao para editar o entrevistador
+    Then aparece uma mensagem de confirmacao na tela que o entrevistador foi editado com sucesso
 
-  Scenario: excluir um entrevistador
-    Given que existe um empregador chamado "José" dono da empresa "Empresa ACD" com o email "jose200@example.com" com o endereco "Rua Z" com o telefone "85-99845-9896" e com o cnpj "45.935.624/0001-00"
-    And  tem a seguinte vaga de emprego: Titulo: "Dev junior ruby on rails", Descricao: "20 Anos de Experiência" e Salario: "3000"
-    When estou na pagina de entrevistador
-    And visito o entrevistador desejado
-    And clico em deletar entrevistador
-    Then devo ver uma mensagem de confirmacao da exclusao do entrevistador
+  Scenario: Excluir um entrevistador
+    Given que existe um entrevistador com nome "Gabriel", email "Gabriel@gmail.com" e telefone "87-99945-9995" para a vaga de emprego "Dev Junior ruby on rails"
+    When acesso a página de listagem de entrevistadores
+    And seleciono o entrevistador desejado
+    And clico no botão para excluir o entrevistador
+    Then aparece uma mensagem de confirmação na tela que o entrevistador foi excluído
