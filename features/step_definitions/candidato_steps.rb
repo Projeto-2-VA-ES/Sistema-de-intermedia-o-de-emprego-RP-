@@ -48,7 +48,7 @@ end
 
 And("visito o candidato desejado") do
   candidato = Candidato.last
-  visit candidato_path(candidato)
+  visit candidatos_path(candidato)
 end
 
 Then(/^devo ver o nome do candidato e seus dados$/) do
