@@ -47,8 +47,8 @@ When("estou na pagina de candidatos") do
 end
 
 And("visito o candidato desejado") do
-  Candidato.last
-  find_all(:link_or_button, 'Show this candidato')[1].click
+  candidato = Candidato.last
+  visit candidatos_path(candidato)
 end
 
 And("eu clico no botão de deletar candidato") do
