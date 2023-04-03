@@ -39,21 +39,25 @@ Feature: Vaga
     And eu clico em criar Vaga
     Then eu vejo uma mensagem que informa que a vaga nao pode ser cadastrada com salario em branco
 
+   #Remover vaga
+  Scenario: Remover vaga com sucesso
+    Given que existe uma vaga de titulo: 'Desenvolvedor Ruby', descricao: 'Vaga para desenvolvedor Ruby', salario: '5000' para o empregador "Joao Silva"
+    And eu estou na pagina de listagem de vagas
+    When eu acesso uma vaga em especifico
+    And eu clico no botao para deletar a vaga
+    Then eu vejo a mensagem que diz que a vaga foi removida com sucesso
 
    #Editar vaga
-  #Scenario: Editar vaga com sucesso
-    #Given a vaga de titulo: "Desenvolvedor Ruby", descricao: "Vaga para desenvolvedor Ruby", salario: "R$ 5.000,00" existe
-    #When que eu esteja na pagina de edicao de vaga
-    #And altero os campos desejados da vaga, preenchendo a descricao com "Vaga para desenvolvedor Ruby on Rails"
-    #And e clico para atualizar vaga
-    #Then aparece a mensagem de confirmacao na tela que a vaga atualizada com sucesso
+  Scenario: Editar vaga com sucesso
+    Given que existe uma vaga de titulo: 'Desenvolvedor Ruby', descricao: 'Vaga para desenvolvedor Ruby', salario: '5000' para o empregador "Joao Silva"
+    And eu estou na pagina de listagem de vagas
+    When eu acesso uma vaga em especifico
+    And eu acesso a pagina de edicao desta vaga
+    And eu altero os campos desejados da vaga preenchendo a descricao com "Vaga para desenvolvedor Ruby on Rails"
+    And clico para atualizar vaga
+    Then aparece a mensagem de confirmacao na tela que a vaga atualizada com sucesso
 
-   #Remover vaga
-  #Scenario: Remover vaga com sucesso
-    #Given a vaga de titulo: "Desenvolvedor Ruby", descricao: "Vaga para desenvolvedor Ruby", salario: "R$ 5.000,00" existe
-    #When que eu esteja na pagina de listagem de vagas
-    #And clico no botao para deletar a vaga
-    #Then aparece uma mensagem dizendo a vaga foi removida com sucesso
+
 
 
 
