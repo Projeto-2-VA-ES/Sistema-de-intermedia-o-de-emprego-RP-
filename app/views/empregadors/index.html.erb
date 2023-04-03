@@ -1,14 +1,18 @@
 <p style="color: green"><%= notice %></p>
+<div class="col-md-6 mx-auto text-center">
 
-<h1>Empregadors</h1>
+  <h1>Empregadores</h1>
+</div>
 
-<div id="empregadors">
+
+<div class="col-md-6 mx-auto text-center">
   <% @empregadors.each do |empregador| %>
     <%= render empregador %>
     <p>
-      <%= link_to "Show this empregador", empregador %>
+      <%= link_to "Show this empregador", empregador,class: "btn btn-primary btn-lg float-right" %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New empregador", new_empregador_path %>
+<%= link_to "Cadastrar um empregador", new_empregador_path, class: "btn btn-primary btn-lg float-right" %>
+

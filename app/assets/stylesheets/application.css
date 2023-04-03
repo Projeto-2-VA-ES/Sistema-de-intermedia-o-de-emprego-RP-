@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+.card {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.card {
+    display: inline-block;
+    margin-right: 10px;
+
+
+}
+
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
