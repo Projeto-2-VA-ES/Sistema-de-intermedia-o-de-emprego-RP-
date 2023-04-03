@@ -34,7 +34,7 @@ Feature: entrevistador
     Then aparece uma mensagem de confirmacao na tela que o entrevistador foi editado com sucesso
 
   Scenario: Excluir um entrevistador
-    Given que existe um entrevistador com nome "Gabriel", email "Gabriel@gmail.com" e telefone "87-99945-9995" para a vaga de emprego "Dev Junior ruby on rails"
+    Given um entrevistador com nome "Gabriel", email "Gabriel@gmail.com" e telefone "87-99945-9995" para a vaga de emprego "Dev Junior ruby on rails"
     When acesso a página de listagem de entrevistadores
     And seleciono o entrevistador desejado
     And clico no botão para excluir o entrevistador
