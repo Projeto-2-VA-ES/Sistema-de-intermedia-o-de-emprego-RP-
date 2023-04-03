@@ -47,30 +47,15 @@ When("estou na pagina de candidatos") do
 end
 
 And("visito o candidato desejado") do
-  Candidato.last
-  find_all(:link_or_button, 'Show this candidato')[1].click
+  candidato = Candidato.last
+  visit candidatos_path(candidato)
 end
 
-And("eu clico no botão de deletar candidato") do
-  click_button 'Destroy this candidato'
+Then(/^devo ver o nome do candidato e seus dados$/) do
+  page.has_content?('Joao')
 end
 
-Then("eu vejo uma mensagem que informa que o candidato foi excluído com sucesso") do
-  page.has_content?('Candidato was successfully destroyed.')
-end
-
-And(/^eu clico no link de editar candidato$/) do
-  click_link_or_button 'Edit this candidato'
-end
-
-And(/^preencho os campos que desejo atualizar com informacoes validas$/) do
-  fill_in 'Email', :with => 'victor@13gmail.com'
-end
-
-And(/^clico em Atualizar Candidato$/) do
-  click_button 'Update Candidato'
-end
-
-Then(/^devo ver uma mensagem de confirmacao da atualizacao$/) do
-  page.has_content?('Candidato atualizado com sucesso')
+When(/^eu preencho os campos do candidato II obrigatorios com informacoes validas$/) do
+  Candidato.create!(nome: "Luis", email: 'luis@gmail.com', cpf: '06345678901', dataNascimento: '2000-01-01', telefone: '11-12345-1234')
+  Curriculo.create!(nome: "Joao", objetivo:'Trabalhar na área administrativa',experiencia_profissional:'10 anso na área',formacao_academica:'Administração',habilidades:'inglês fluente',candidato_id:1)
 end
