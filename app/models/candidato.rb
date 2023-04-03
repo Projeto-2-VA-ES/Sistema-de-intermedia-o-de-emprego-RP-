@@ -1,8 +1,7 @@
 class Candidato < ApplicationRecord
 
-  has_many :candidaturas, :dependent => :destroy
-  has_one :curriculo, :dependent => :destroy
-  has_many :vagas_de_emprego, through: :candidaturas
+  has_many :candidaturas, dependent: :destroy
+  has_one :curriculo, dependent: :destroy
   accepts_nested_attributes_for :curriculo
 
   validates :nome, presence: true, exclusion: { in: %w(!@#$%¨&*()_+=[{]};:?/'")}, length: { minimum: 2 }

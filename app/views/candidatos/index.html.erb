@@ -1,14 +1,17 @@
 <p style="color: green"><%= notice %></p>
+<div class="col-md-6 mx-auto text-center">
 
-<h1>Candidatos</h1>
+  <h1>Candidatos </h1>
+</div>
 
-<div id="candidatos">
+
+<div id="candidatos" class="col-md-6 mx-auto text-center">
   <% @candidatos.each do |candidato| %>
     <%= render candidato %>
     <p>
-      <%= link_to "Show this candidato", candidato %>
+      <%= link_to "Show this candidato", candidato, class: "btn btn-primary btn-lg float-right" %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New candidato", new_candidato_path %>
+<%= link_to "New candidato", new_candidato_path, class: "btn btn-primary btn-lg float-right" %>
