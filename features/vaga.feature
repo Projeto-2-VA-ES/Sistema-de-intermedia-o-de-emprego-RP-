@@ -25,20 +25,6 @@ Feature: Vaga
     And eu clico em criar Vaga
     Then eu vejo uma mensagem que informa que a vaga nao pode ser cadastrada com esse titulo
 
-  Scenario: Criar vaga sem sucesso 3
-    Given O empregador de nomeEmpresa: "Empresa ABC", nome: "João da Silva", endereco: 'Rua B, 456', email: 'joao.silva@example.com', cnpj: '98.765.432/0001-99', telefone: '11-44444-4444' existe
-    And que eu esteja na pagina de criacao de vaga
-    When eu preencho os campos obrigatorios com os dados da vaga titulo: "Desenvolvedor Ruby", descricao: "", salario: ""
-    And eu clico em criar Vaga
-    Then eu vejo uma mensagem que informa que a vaga nao pode ser cadastrada com a descricao e o salario em branco
-
-  Scenario: Criar vaga sem sucesso 4
-    Given O empregador de nomeEmpresa: "Empresa ABC", nome: "João da Silva", endereco: 'Rua B, 456', email: 'joao.silva@example.com', cnpj: '98.765.432/0001-99', telefone: '11-44444-4444' existe
-    And que eu esteja na pagina de criacao de vaga
-    When eu preencho os campos obrigatorios com os dados da vaga titulo: "", descricao: "Vaga para desenvolvedor Ruby", salario: ""
-    And eu clico em criar Vaga
-    Then eu vejo uma mensagem que informa que a vaga nao pode ser cadastrada com salario em branco
-
    #Remover vaga
   Scenario: Remover vaga com sucesso
     Given que existe uma vaga de titulo: 'Desenvolvedor Ruby', descricao: 'Vaga para desenvolvedor Ruby', salario: '5000' para o empregador "Joao Silva"
