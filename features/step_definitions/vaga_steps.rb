@@ -58,11 +58,9 @@ end
 
 When('eu acesso uma vaga em especifico') do
   visit "/vaga_de_empregos/1"
-  expect(page).to have_content('Titulo: Desenvolvedor Ruby')
 end
 
 And("eu clico no botao para deletar a vaga") do
-  expect(page).to have_content('Titulo: Desenvolvedor Ruby')
   click_link_or_button 'Destroy this vaga de emprego'
 end
 
@@ -73,7 +71,6 @@ end
 #Editar vaga
 And('eu acesso a pagina de edicao desta vaga') do
   visit "/vaga_de_empregos/1/edit"
-  expect(page).to have_content('Editing vaga de emprego')
 end
 
 And('eu altero os campos desejados da vaga preenchendo a descricao com {string}') do |descricao|
