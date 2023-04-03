@@ -47,8 +47,7 @@ When("estou na pagina de candidatos") do
 end
 
 And("visito o candidato desejado") do
-  candidato = Candidato.last
-  visit candidato_path(candidato)
+  click_link_or_button 'Show this candidato'
 end
 
 And("eu clico no botão de deletar candidato") do
