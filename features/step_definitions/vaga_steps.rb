@@ -11,8 +11,7 @@ Given('O empregador de nomeEmpresa: {string}, nome: {string}, endereco: {string}
   click_button 'Create Empregador'
 end
 And(/^que eu esteja na pagina de criacao de vaga$/) do
-  empregador = Empregador.first
-  visit(empregador_path(empregador))
+  visit'/vaga_de_empregos/new'
 end
 When("eu preencho os campos obrigatorios com os dados da vaga titulo: {string}, descricao: {string}, salario: {string}") do |titulo, descricao, salario|
   fill_in 'Titulo', with: titulo
@@ -34,50 +33,57 @@ Then(/^eu vejo uma mensagem que informa que a vaga nao pode ser cadastrada com e
   page.has_content?("Título não pode ficar em branco")
 end
 
-#Criar vaga sem sucesso 3
-Then(/^eu vejo uma mensagem que informa que a vaga nao pode ser cadastrada com a descricao e o salario em branco$/) do
-  page.has_content?("Descricão e salário não podem ficar em branco")
-end
-#Criar vaga sem sucesso 4
-Then(/^eu vejo uma mensagem que informa que a vaga nao pode ser cadastrada com salario em branco$/) do
-  page.has_content?("Salário não pode ficar em branco")
+# Remover vaga
+Given('que existe uma vaga de titulo: {string}, descricao: {string}, salario: {string} para o empregador {string}') do |titulo, descricao, salario, nome_empregador|
+  visit '/empregadors/new'
+  fill_in 'Nomeempresa', with: "nomeEmpresa"
+  fill_in 'Nome', with: nome_empregador
+  fill_in 'Endereco', with: "Rua luan, 47"
+  fill_in 'Email', with: "luan@example.com"
+  fill_in 'Cnpj', with: "12.345.678/0001-90"
+  fill_in 'Telefone', with: "11-95555-5555"
+  click_button 'Create Empregador'
+
+  visit '/vaga_de_empregos/new'
+  fill_in 'Titulo', with: titulo
+  fill_in 'Descricao', with: descricao
+  fill_in 'Salario', with: salario
+  click_button 'Create Vaga de emprego'
+  expect(page).to have_content(titulo)
 end
 
-=begin
+And('eu estou na pagina de listagem de vagas') do
+  visit "/vaga_de_empregos"
+end
+
+When('eu acesso uma vaga em especifico') do
+  visit "/vaga_de_empregos/1"
+end
+
+And("eu clico no botao para deletar a vaga") do
+  click_link_or_button 'Destroy this vaga de emprego'
+end
+
+Then("eu vejo a mensagem que diz que a vaga foi removida com sucesso") do
+  expect(page).to have_content('Vaga de emprego foi destruida com sucesso.')
+end
+
 #Editar vaga
-Given('a vaga de titulo: {string}, descricao: {string}, salario: {string} existe') do |titulo, descricao, salario|
-  vaga_de_empregos = VagaDeEmprego.create!(titulo: titulo_vaga, descricao: 'descricao da vaga de emprego', salario: 1000)
-
+And('eu acesso a pagina de edicao desta vaga') do
+  visit "/vaga_de_empregos/1/edit"
 end
 
-And('que eu esteja na pagina de edicao de vaga') do
-  visit edit_vaga_de_empregos_path(@vaga)
+And('eu altero os campos desejados da vaga preenchendo a descricao com {string}') do |descricao|
+  fill_in 'Descricao', with: descricao
 end
 
-When('altero os campos desejados da vaga, preenchendo a descricao com {string}') do |nova_descricao|
-  fill_in 'vaga[descricao]', with: nova_descricao
-end
-
-And('e clico para atualizar vaga') do
-click_button 'Atualizar Vaga'
+And('clico para atualizar vaga') do
+  click_link_or_button 'Update Vaga de emprego'
 end
 
 Then('aparece a mensagem de confirmacao na tela que a vaga atualizada com sucesso') do
-  page.has_content?('Vaga atualizada com sucesso!')
+  expect(page).to have_content('Vaga de emprego foi atualizada com sucesso.')
+  expect(page).to have_content('Vaga para desenvolvedor Ruby on Rails')
 end
 
-#Remover vaga
-When('que eu esteja na pagina de listagem de vagas') do
-  visit vaga_de_empregos_path(@vaga)
-end
 
-And('clico no botao para deletar a vaga') do
-  vaga_de_empregos = VagaDeEmprego.first
-  visit(vaga_de_empregos_path(vaga_de_empregos))
-  click_button 'Destroy this Vaga de Emprego'
-end
-
-Then('aparece uma mensagem dizendo a vaga foi removida com sucesso') do
-  page.has_content?('Vaga removida com sucesso!')
-end
-=end
