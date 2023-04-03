@@ -48,7 +48,7 @@ end
 
 And("visito o candidato desejado") do
   Candidato.last
-  click_link_or_button 'Show this candidato'
+  find_all(:link_or_button, 'Show this candidato')[1].click
 end
 
 And("eu clico no botão de deletar candidato") do
