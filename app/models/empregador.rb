@@ -1,6 +1,6 @@
 class Empregador < ApplicationRecord
-  has_many :vaga_de_empregos , dependent: :destroy
-  has_many :candidatoes, through: :vaga_de_empregos, dependent: :destroy
+  has_many :vagas_de_emprego, class_name: 'VagaDeEmprego', dependent: :destroy
+
 
   validates :nome, :nomeEmpresa,:cnpj, :email, :telefone, :endereco, presence: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
