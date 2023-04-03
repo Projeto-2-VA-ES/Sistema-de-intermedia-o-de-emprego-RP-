@@ -54,3 +54,8 @@ end
 Then(/^devo ver o nome do candidato e seus dados$/) do
   page.has_content?('Joao')
 end
+
+When(/^eu preencho os campos do candidato II obrigatorios com informacoes validas$/) do
+  Candidato.create!(nome: "Luis", email: 'luis@gmail.com', cpf: '06345678901', dataNascimento: '2000-01-01', telefone: '11-12345-1234')
+  Curriculo.create!(nome: "Joao", objetivo:'Trabalhar na área administrativa',experiencia_profissional:'10 anso na área',formacao_academica:'Administração',habilidades:'inglês fluente',candidato_id:1)
+end
