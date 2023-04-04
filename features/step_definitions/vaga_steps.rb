@@ -58,7 +58,7 @@ end
 
 When('eu acesso uma vaga em especifico') do
   @vaga_de_emprego = VagaDeEmprego.first
-  visit "/vaga_de_empregos/1"
+  visit(vaga_de_emprego_path(@vaga_de_emprego))
 end
 
 And('eu clico no botao para deletar a vaga') do
