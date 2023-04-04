@@ -61,6 +61,7 @@ When('eu acesso uma vaga em especifico') do
 end
 
 And("eu clico no botao para deletar a vaga") do
+  expect(page).to have_content('Back to vaga de empregos')
   click_link_or_button 'Destroy this vaga de emprego'
 end
 
