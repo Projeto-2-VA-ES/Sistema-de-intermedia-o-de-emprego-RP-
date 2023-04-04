@@ -2,6 +2,8 @@
 
 <h1>Curriculos</h1>
 
+<%= link_to "Voltar para a página inicial", root_path %>
+
 <div id="curriculos">
   <% @curriculos.each do |curriculo| %>
     <%= render curriculo %>
@@ -11,4 +13,4 @@
   <% end %>
 </div>
 
-<%= link_to "New curriculo", new_curriculo_path %>
+<%= link_to "New curriculo", new_curriculo_path, class: "btn btn-primary btn-lg float-left" %>
