@@ -57,6 +57,7 @@ And('eu estou na pagina de listagem de vagas') do
 end
 
 When('eu acesso uma vaga em especifico') do
+  @vaga_de_emprego = VagaDeEmprego.first
   visit "/vaga_de_empregos/1"
 end
 
