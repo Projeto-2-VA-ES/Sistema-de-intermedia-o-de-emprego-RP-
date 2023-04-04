@@ -1,25 +1,17 @@
 class CandidaturasController < ApplicationController
   before_action :set_candidatura, only: %i[ show edit update destroy ]
 
-  # GET /candidaturas or /candidaturas.json
   def index
     @candidaturas = Candidatura.all
   end
 
-  # GET /candidaturas/1 or /candidaturas/1.json
-  def show
-  end
-
-  # GET /candidaturas/new
   def new
     @candidatura = Candidatura.new
   end
 
-  # GET /candidaturas/1/edit
   def edit
   end
 
-  # POST /candidaturas or /candidaturas.json
   def create
     @candidatura = Candidatura.new(candidatura_params)
 
@@ -34,8 +26,6 @@ class CandidaturasController < ApplicationController
     end
   end
 
-
-  # PATCH/PUT /candidaturas/1 or /candidaturas/1.json
   def update
     respond_to do |format|
       if @candidatura.update(candidatura_params)
@@ -48,7 +38,6 @@ class CandidaturasController < ApplicationController
     end
   end
 
-  # DELETE /candidaturas/1 or /candidaturas/1.json
   def destroy
     @candidatura.destroy
 
@@ -59,12 +48,11 @@ class CandidaturasController < ApplicationController
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
+
   def set_candidatura
     @candidatura = Candidatura.where(id: params[:id]).first
   end
 
-  # Only allow a list of trusted parameters through.
   def candidatura_params
     params.require(:candidatura).permit(:mensagem, :candidato_id, :vaga_de_emprego_id)
   end

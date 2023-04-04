@@ -82,6 +82,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_16_020707) do
   add_foreign_key "candidaturas", "candidatos"
   add_foreign_key "candidaturas", "vaga_de_empregos"
   add_foreign_key "curriculos", "candidatos"
-  add_foreign_key "entrevistadors", "vaga_de_empregos"
+  add_foreign_key "entrevistadors", "vaga_de_empregos", on_delete: :cascade
   add_foreign_key "vaga_de_empregos", "empregadors"
 end

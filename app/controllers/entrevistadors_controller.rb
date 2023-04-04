@@ -1,25 +1,17 @@
 class EntrevistadorsController < ApplicationController
   before_action :set_entrevistador, only: %i[ show edit update destroy ]
 
-  # GET /entrevistadors or /entrevistadors.json
   def index
     @entrevistadors = Entrevistador.all
   end
 
-  # GET /entrevistadors/1 or /entrevistadors/1.json
-  def show
-  end
-
-  # GET /entrevistadors/new
   def new
     @entrevistador = Entrevistador.new
   end
 
-  # GET /entrevistadors/1/edit
   def edit
   end
 
-  # POST /entrevistadors or /entrevistadors.json
   def create
     @entrevistador = Entrevistador.new(entrevistador_params)
 
@@ -34,7 +26,6 @@ class EntrevistadorsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /entrevistadors/1 or /entrevistadors/1.json
   def update
     respond_to do |format|
       if @entrevistador.update(entrevistador_params)
@@ -47,7 +38,6 @@ class EntrevistadorsController < ApplicationController
     end
   end
 
-  # DELETE /entrevistadors/1 or /entrevistadors/1.json
   def destroy
     @entrevistador.destroy
 
@@ -58,13 +48,12 @@ class EntrevistadorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_entrevistador
-      @entrevistador = Entrevistador.where(id: params[:id]).first
-    end
 
-    # Only allow a list of trusted parameters through.
-    def entrevistador_params
-      params.require(:entrevistador).permit(:nome, :email, :telefone, :vaga_de_emprego_id)
-    end
+  def set_entrevistador
+    @entrevistador = Entrevistador.where(id: params[:id]).first
+  end
+
+  def entrevistador_params
+    params.require(:entrevistador).permit(:nome, :email, :telefone, :vaga_de_emprego_id)
+  end
 end
