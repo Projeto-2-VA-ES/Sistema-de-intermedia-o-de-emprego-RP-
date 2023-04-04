@@ -9,9 +9,6 @@ class EmpregadorsController < ApplicationController
     @empregador = Empregador.new
   end
 
-  def edit
-  end
-
   def create
     @empregador = Empregador.new(empregador_params)
 
