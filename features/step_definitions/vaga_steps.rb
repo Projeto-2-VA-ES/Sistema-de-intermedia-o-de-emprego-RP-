@@ -57,7 +57,7 @@ And('eu estou na pagina de listagem de vagas') do
 end
 
 When('eu acesso uma vaga em especifico') do
-  click_link_or_button 'Show this vaga de emprego'
+  visit "/vaga_de_empregos/1"
 end
 
 And("eu clico no botao para deletar a vaga") do
