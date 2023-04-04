@@ -2,6 +2,8 @@
 
 <h1>Vaga de empregos</h1>
 
+<%= link_to "Voltar para a página inicial", root_path%>
+
 <div id="vaga_de_empregos">
   <% @vaga_de_empregos.each do |vaga_de_emprego| %>
     <%= render vaga_de_emprego %>
@@ -11,4 +13,4 @@
   <% end %>
 </div>
 
-<%= link_to "New vaga de emprego", new_vaga_de_emprego_path %>
+<%= link_to "New vaga de emprego", new_vaga_de_emprego_path, class: "btn btn-primary btn-lg float-right" %>
