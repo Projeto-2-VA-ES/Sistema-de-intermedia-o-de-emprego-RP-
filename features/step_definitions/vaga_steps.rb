@@ -70,7 +70,7 @@ end
 
 #Editar vaga
 And('eu acesso a pagina de edicao desta vaga') do
-  visit "/vaga_de_empregos/1/edit"
+  click_link_or_button 'Edit this vaga de emprego'
 end
 
 And('eu altero os campos desejados da vaga preenchendo a descricao com {string}') do |descricao|
