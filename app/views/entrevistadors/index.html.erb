@@ -2,6 +2,8 @@
 
 <h1>Entrevistadors</h1>
 
+<%= link_to "Voltar para a página inicial", root_path%>
+
 <div id="entrevistadors">
   <% @entrevistadors.each do |entrevistador| %>
     <%= render entrevistador %>
@@ -11,4 +13,4 @@
   <% end %>
 </div>
 
-<%= link_to "New entrevistador", new_entrevistador_path %>
+<%= link_to "New entrevistador", new_entrevistador_path, class: "btn btn-primary btn-lg float-right" %>
