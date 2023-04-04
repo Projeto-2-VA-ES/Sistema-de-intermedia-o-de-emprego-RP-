@@ -60,12 +60,12 @@ When('eu acesso uma vaga em especifico') do
   visit "/vaga_de_empregos/1"
 end
 
-And("eu clico no botao para deletar a vaga") do
+And('eu clico no botao para deletar a vaga') do
   expect(page).to have_content('Back to vaga de empregos')
   click_link_or_button 'Destroy this vaga de emprego'
 end
 
-Then("eu vejo a mensagem que diz que a vaga foi removida com sucesso") do
+Then('eu vejo a mensagem que diz que a vaga foi removida com sucesso') do
   expect(page).to have_content('Vaga de emprego foi destruida com sucesso.')
 end
 
